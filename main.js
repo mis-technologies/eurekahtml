@@ -1,3 +1,14 @@
+window.addEventListener("scroll", function () {
+  var navbar = document.querySelector(".container");
+  var navBarOffset = navbar.offsetTop;
+
+  if (window.pageYOffset >= navBarOffset) {
+    navbar.classList.add("fixed-nav");
+  } else {
+    navbar.classList.remove("fixed-nav");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const openMenu = document.getElementById("openMenu");
   const closeMenu = document.getElementById("closeMenu");
