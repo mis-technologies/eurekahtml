@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eureka-Programs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <nav class="container">
+        <div class="logo"><img src="./images/logo.png" alt="Eureka" /></div>
+        <div class="nav-bar" id="nav-bar">
+            <div class="nav-logo"><img src="./images/logo.png" alt="Eureka" /></div>
+            <span class="material-symbols-outlined" id="closeMenu"> &#xe5cd; </span>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="program.html">Programs</a></li>
+                <li><a href="index.html#events">Event</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <button>Become an Advocate</button>
+        </div>
+        <span class="material-symbols-outlined" id="openMenu"> &#xe5d2; </span>
+    </nav>
+
+    <div id="header" class="container">
+        <div class="search-container">
+            <input type="text" name="Search" id="search" placeholder="&#128269; Search a topic">
+        </div>
+        <ul>
+            <li class="mini-nav" onclick="showSection('trendingNow')">Trending Now</li>
+            <li class="mini-nav" onclick="showSection('technology')">Technology</li>
+            <li class="mini-nav" onclick="showSection('marketing')">Marketing</li>
+            <li class="mini-nav" onclick="showSection('trendingNow')">Trending Now</li>
+            <li class="mini-nav" onclick="showSection('technology')">Technology</li>
+            <li class="mini-nav" onclick="showSection('marketing')">Marketing</li>
+        </ul>
+    </div>
+
+    <div id="content" class="container"></div>
+
+    <script type="module">
+        import { trendingNow, technology, marketing } from './data.js';
+
+        function renderCards(cards) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = ''; 
+
+            cards.forEach(card => {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                
+                const cardImage = document.createElement('div');
+                cardImage.className = 'image-container';
+                
+                const cardContent = document.createElement('div');
+                cardContent.className = 'cardContent';
+
+                const cardTitle = document.createElement('h4');
+                cardTitle.textContent = card.title;
+
+                const details = document.createElement('p');
+                details.textContent = card.content;
+                
+                const image = document.createElement('img');
+                image.src = card.image;
+                image.alt = card.title;
+                
+                const cardDate = document.createElement('h6');
+                cardDate.textContent = card.date;
+
+                const cardLink = document.createElement('a');
+                cardLink.href = `./program.html#${card.title.replace(/\s+/g, '_')}`;
+                cardLink.textContent = 'Read article';
+                cardLink.onclick = (e) => {
+                    e.preventDefault();
+                    navigateTo(card);
+                };
+
+                cardDiv.appendChild(cardImage);
+                cardDiv.appendChild(cardContent);
+                cardImage.appendChild(image);
+                cardContent.appendChild(cardTitle);
+                cardContent.appendChild(details);
+                cardContent.appendChild(cardDate);
+                cardContent.appendChild(cardLink);
+                contentDiv.appendChild(cardDiv);
+            });
+        }
+
+        function showSection(section) {
+            const miniNavs = document.querySelectorAll('.mini-nav');
+            miniNavs.forEach(nav => nav.classList.remove('active'));
+
+            if (section === 'trendingNow') {
+                renderCards(trendingNow);
+                document.querySelector(`.mini-nav[onclick="showSection('trendingNow')"]`).classList.add('active');
+            } else if (section === 'technology') {
+                renderCards(technology);
+                document.querySelector(`.mini-nav[onclick="showSection('technology')"]`).classList.add('active');
+            } else if (section === 'marketing') {
+                renderCards(marketing);
+                document.querySelector(`.mini-nav[onclick="showSection('marketing')"]`).classList.add('active');
+            }
+        }
+
+        window.showSection = showSection;
+
+        function navigateTo(card) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = `
+            <div class="container article">
+                <h1>${card.title}</h1>
+                <img src="${card.image}" alt="${card.title}">
+                <p class="detail">${card.content}</p>
+                <p class="paragraph">${card.article}</p>
+                <p class="paragraph">${card.article}</p>
+                <p>Date: ${card.date}</p>
+            </div>
+            `;
+            history.pushState(null, '', `./program.html#${card.title.replace(/\s+/g, '_')}`);
+        }
+
+    showSection('trendingNow');
+    </script>
+</body>
+</html>
