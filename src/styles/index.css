@@ -7,8 +7,6 @@
   --gry: #a60874;
   --grn: #7bffb3;
 
-  /* Font Family */
-
   /* Screen Sizes */
   --sm: 640px;
   --md: 768px;
@@ -65,6 +63,7 @@ nav {
   padding: 1.5rem 0;
   background: var(--secondary);
 }
+
 
 .logo {
   width: 10rem;

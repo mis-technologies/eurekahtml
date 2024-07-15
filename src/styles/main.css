@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    /* Colors */
+    --primary: #0279b9;
+    --secondary: #f4f4f4;
+    --accent: #fcbf49;
+    --pp: #a60874;
+    --gry: #a60874;
+    --grn: #7bffb3;
+  
+    /* Screen Sizes */
+    --sm: 640px;
+    --md: 768px;
+    --lg: 1024px;
+    --xl: 1280px;
+  
+    /* font family */
+    --basic-font: ui-sans-serif, system-ui;
+    --open-sans: "Open Sans", sans-serif;
+    --lato: "Lato", sans-serif;
+    --roboto: "Roboto", sans-serif;
+    --script: "Caveat", cursive;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+
+  .material-symbols-outlined {
+    font-family: "Material Symbols Outlined", sans-serif;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  
+  .script-font {
+    font-family: var(--script);
+    color: var(--grn);
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  body {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    position: relative;
+  }
+  

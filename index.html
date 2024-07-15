@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eureka</title>
-
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,26 +17,32 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="main.js"></script>
+    <script src="/src/scripts/main.js"></script>
     <script src="https://kit.fontawesome.com/b4b8be07f5.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <nav class="container">
-      <div class="logo"><img src="./images/logo.png" alt="Eureka" /></div>
-      <div class="nav-bar" id="nav-bar">
-        <div class="nav-logo"><img src="./images/logo.png" alt="Eureka" /></div>
-        <span class="material-symbols-outlined" id="closeMenu"> &#xe5cd; </span>
-        <ul class="nav-items">
-          <li class=""><a href="#">Home</a></li>
-          <li class=""><a href="#about">About</a></li>
-          <li class=""><a href="./program.html">Programs</a></li>
-          <li class=""><a href="#events">Event</a></li>
-          <li class=""><a href="./contact.html">Contact Us</a></li>
+    <header class="sticky top-0 left-0 z-50 bg-secondary">
+    <nav class="flex justify-between items-center py-6 container" >
+      <div class="-translate-x-10"><img src="/src/images/logo.png" alt="Eureka" /></div>
+      <div class="flex items-center justify-between min-w-[70%] gap-6" id="nav-bar">
+        <div class="hidden"><img src="/src/images/logo.png" alt="Eureka" /></div>
+        <div class="block md:hidden">
+          <span class="material-symbols-outlined" id="closeMenu"> &#xe5cd; </span>
+        </div>
+        <ul class="nav-items flex items-center gap-12">
+          <li class="font-sans font-semibold hover:text-primary"><a href="#">Home</a></li>
+          <li class="font-sans font-semibold hover:text-primary"><a href="#about">About</a></li>
+          <li class="font-sans font-semibold hover:text-primary"><a href="./program.html">Programs</a></li>
+          <li class="font-sans font-semibold hover:text-primary"><a href="#events">Event</a></li>
+          <li class="font-sans font-semibold hover:text-primary"><a href="./contact.html">Contact Us</a></li>
         </ul>
-        <button>Become an Advocate</button>
+        <button class="bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105">Become an Advocate</button>
       </div>
-      <span class="material-symbols-outlined" id="openMenu"> &#xe5d2; </span>
+      <div class="block md:hidden">
+        <span class="material-symbols-outlined" id="openMenu"> &#xe5d2; </span>
+      </div>
     </nav>
+  </header>
 
     <section id="hero" class="container">
       <div class="hero-content">
@@ -49,7 +55,7 @@
           <button>Join the community</button>
           <div>
             <p>It’s absolutely free.</p>
-            <img src="./images/designs/Vector6.png" alt="" />
+            <img src="/src/images/designs/Vector6.png" alt="" />
           </div>
         </div>
       </div>
@@ -57,61 +63,61 @@
         <div class="hero-images">        
           <div class="img-1">
             <img
-              src="./images/young-man-working-from-home BW 1.png"
+              src="src/images/young-man-working-from-home BW 1.png"
               alt=""
             />
           </div>
           <div class="img-2">
             <img
-            src="./images/smiling-showing-hello-gesture-holding-folder-young-africanamerican-guy-isolated-blue-background BW 1.png"
+            src="src/images/smiling-showing-hello-gesture-holding-folder-young-africanamerican-guy-isolated-blue-background BW 1.png"
               alt=""
             />
           </div>
           <div class="img-3">
             <img
-              src="./images/positive-hipster-girl.png"
+              src="src/images/positive-hipster-girl.png"
               alt=""
             />
           </div>
           <div class="img-4">
             <img
-            src="./images/medium-shot-smiley-man-work BW 1.png"
+            src="src/images/medium-shot-smiley-man-work BW 1.png"
             alt=""
             />
           </div>        
         </div>
         <div class="absolute icurve1">
-          <img src="./images/designs/curve1.png" alt="">
+          <img src="/src/images/designs/curve1.png" alt="">
         </div>
         <div class="absolute ix">
-          <img src="./images/designs/x.png" alt="">
+          <img src="/src/images/designs/x.png" alt="">
         </div>
         <div class="absolute icurve2">
-          <img src="./images/designs/yellow-arrows-x8AhtWqjfw.png" alt="">
+          <img src="/src/images/designs/yellow-arrows-x8AhtWqjfw.png" alt="">
         </div>
         <div class="absolute icurve3">
-            <img src="./images/designs/Frame1.png" alt="">
+            <img src="/src/images/designs/Frame1.png" alt="">
         </div>
       </div>
       <div class="small-screen-button">
         <button>Join the community</button>
         <div>
           <p>It’s absolutely free.</p>
-          <img src="./images/designs/Vector6.png" alt="" />
+          <img src="/src/images/designs/Vector6.png" alt="" />
         </div>
       </div>
   
   <div class="absolute i1">
-    <img src="./images/designs/Vector (3).png" alt="">
+    <img src="/src/images/designs/Vector (3).png" alt="">
   </div>
   <div class="absolute i2">
-    <img src="./images/designs/Vector (4).png" alt="">
+    <img src="/src/images/designs/Vector (4).png" alt="">
   </div>  
   <div class="absolute i3">
-    <img src="./images/designs/Vector4.png" alt="">
+    <img src="/src/images/designs/Vector4.png" alt="">
   </div>  
   <div class="absolute i4">
-    <img src="./images/designs/Vector5.png" alt="">
+    <img src="/src/images/designs/Vector5.png" alt="">
     <div class="mask1"></div>
   </div>  
   
@@ -120,19 +126,19 @@
     <h2>More than 50+ schools trust <span>Eureka</span></h2>
     <div class="sponsors">
       <div class="sponsor">
-        <img src="./images/partners/Black and White Collection 0.png" alt="lorem">
+        <img src="/src/images/partners/Black and White Collection 0.png" alt="lorem">
         <h5>LogoIpsum</h5>
       </div>
       <div class="sponsor">
-        <img src="./images/partners/Black and White Collection 1.png" alt="lorem">
+        <img src="/src/images/partners/Black and White Collection 1.png" alt="lorem">
         <h5>LogoIpsum</h2>
       </div>
       <div class="sponsor">
-        <img src="./images/partners/Black and White Collection 2.png" alt="lorem">
+        <img src="src/images/partners/Black and White Collection 2.png" alt="lorem">
         <h5>LogoIpsum</h2>
       </div>
       <div class="sponsor">
-        <img src="./images/partners/Black and White Collection 3.png" alt="lorem">
+        <img src="src/images/partners/Black and White Collection 3.png" alt="lorem">
         <h5>LogoIpsum</h2>
       </div>
     </div>
@@ -141,7 +147,7 @@
     <div class="container about">
       <div class="image-container">
           <img
-            src="./images/low-angle-multiracial-college-students BW 1.png"
+            src="src/images/low-angle-multiracial-college-students BW 1.png"
             alt=""
             srcset=""
           />
@@ -160,55 +166,55 @@
           </ul>
           <div class="button">
             <button>Join the community</button>
-          <img src="./images/designs/Vector6.png" alt="" />
+          <img src="src/images/designs/Vector6.png" alt="" />
           </div>
         </div>
         </div>
         <div class="absolute i5">
-          <img src="./images/designs/Vector (2).png" alt="">
+          <img src="src/images/designs/Vector (2).png" alt="">
         </div>
         <div class="absolute i6">
-          <img src="./images/designs/Vector10.png" alt="">
+          <img src="src/images/designs/Vector10.png" alt="">
         </div>  
         <div class="absolute i7">
-          <img src="./images/designs/Vector4.png" alt="">
+          <img src="src/images/designs/Vector4.png" alt="">
         </div>  
         <div class="absolute i8">
-          <img src="./images/designs/Vector.png" alt="">
+          <img src="src/images/designs/Vector.png" alt="">
           <div class="mask2"></div>
         </div>  
   </section>
   <div class="container socials">
     <div class="platform">
-     <img src="./images/socials/mingcute_facebook-line.png" alt="">
+     <img src="src/images/socials/mingcute_facebook-line.png" alt="">
       <div class="count">
        <h1> 5k</h1>
        <p>followers</p>
       </div>
      </div>
    <div class="platform">
-      <img src="./images/socials/Vector.png" alt="">
+      <img src="src/images/socials/Vector.png" alt="">
           <div class="count">
             <h1> 5k</h1>
             <p>Subscribers</p>
           </div>
         </div>
         <div class="platform">
-          <img src="./images/socials/Vector (1).png" alt="">
+          <img src="src/images/socials/Vector (1).png" alt="">
           <div class="count">
             <h1> 1M</h1>
             <p>Subscribers</p>
           </div>
         </div>
         <div class="platform">
-          <img src="./images/socials/Vector (2).png" alt="">
+          <img src="src/images/socials/Vector (2).png" alt="">
           <div class="count">
             <h1> 1k</h1>
             <p>followers</p>
           </div>
         </div>
         <div class="platform">
-          <img src="./images/socials/Vector (1).png" alt="">
+          <img src="src/images/socials/Vector (1).png" alt="">
           <div class="count">
             <h1> 3k</h1>
             <p>followers</p>
@@ -227,28 +233,28 @@
 
         <div class="boxes">
           <div class="box span1">
-            <img src="./images/icons/clarity_note-line.png" alt="">
+            <img src="src/images/icons/clarity_note-line.png" alt="">
             <h5>
               Curriculum Development
             </h5>
             <p>Shape engaging learning experiences by designing curriculum and promoting innovative teaching methods..</p>
           </div>
           <div class="box span1">
-            <img src="./images/icons/carbon_license-third-party (1).png" alt="">
+            <img src="src/images/icons/carbon_license-third-party (1).png" alt="">
             <h5>
               Event Organization & Management
             </h5>
             <p> Lead in planning and executing school events, fostering a vibrant and inclusive community.</p>
           </div>
           <div class="box span1">
-            <img src="./images/icons/la_chalkboard-teacher.png" alt="">
+            <img src="src/images/icons/la_chalkboard-teacher.png" alt="">
             <h5>
               Student Support & Mentoring
             </h5>
             <p> Provide guidance and encouragement to students, helping them navigate challenges and reach their potential.</p>
           </div>
           <div class="box span1">
-            <img src="./images/icons/Vector (3).png" alt="">
+            <img src="src/images/icons/Vector (3).png" alt="">
             <h5>
               Community Engagement & Advocacy
             </h5>
@@ -258,14 +264,14 @@
       </div>
       
       <div class="absolute i5">
-        <img src="./images/designs/Vector7.png" alt="">
+        <img src="src/images/designs/Vector7.png" alt="">
       </div>
       <div class="absolute i8">
-        <img src="./images/designs/Vector.png" alt="">
+        <img src="src/images/designs/Vector.png" alt="">
         <div class="mask1"></div>
       </div>  
       <div class="absolute i9">
-        <img src="./images/designs/Vector (1).png" alt="">
+        <img src="src/images/designs/Vector (1).png" alt="">
       </div>  
 
     </section>
@@ -292,7 +298,7 @@
               
             </div>
               <div class="img-container">
-                <img src="./images/people-playing-wooden-tower-game 1.png" alt="">
+                <img src="src/images/people-playing-wooden-tower-game 1.png" alt="">
 
               </div>
           </div>
@@ -308,7 +314,7 @@
             </div>
                           </div>
               <div class="img-container">
-                <img src="./images/people-playing-wooden-tower-game 1.png" alt="">
+                <img src="src/images/people-playing-wooden-tower-game 1.png" alt="">
 
               </div>
           </div>
@@ -324,7 +330,7 @@
             </div>
                           </div>
               <div class="img-container">
-                <img src="./images/people-playing-wooden-tower-game 1.png" alt="">
+                <img src="src/images/people-playing-wooden-tower-game 1.png" alt="">
 
               </div>
           </div>
@@ -340,14 +346,14 @@
             </div>
                           </div>
               <div class="img-container">
-                <img src="./images/people-playing-wooden-tower-game 1.png" alt="">
+                <img src="src/images/people-playing-wooden-tower-game 1.png" alt="">
 
               </div>
           </div>
         </div>
       </div>
       <div class="absolute i16">
-        <img src="./images/designs/Vector4.png" alt="">
+        <img src="src/images/designs/Vector4.png" alt="">
         <div class="mask2"></div>
       </div>  
 
@@ -371,51 +377,39 @@
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header">What is Eureka? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="accordion-header">What benefits do I get as an advocate? <i class="fa-solid fa-chevron-down"></i></div>
             <div class="accordion-content">
-              <p>Eureka is a platform designed to empower education by supporting and promoting dynamic learning experiences and impactful events.</p>
+              <p>As an advocate, you gain leadership experience, enhance your communication skills, and have the opportunity to shape the direction of education in your school.</p>
             </div>
           </div>
           <div class="accordion-item">
-            <div class="accordion-header">How can I become an advocate? <i class="fa-solid fa-chevron-down"></i></div>
+            <div class="accordion-header">How can I contact Eureka? <i class="fa-solid fa-chevron-down"></i></div>
             <div class="accordion-content">
-              <p>Join our community by clicking the 'Become an Advocate' button and filling out the necessary information to get started.</p>
+              <p>You can contact us through the 'Contact Us' page or by filling out the form in the 'Have Any More Questions?' section below.</p>
             </div>
           </div>
-          <div class="accordion-item">
-            <div class="accordion-header">What is Eureka? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="accordion-content">
-              <p>Eureka is a platform designed to empower education by supporting and promoting dynamic learning experiences and impactful events.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">How can I become an advocate? <i class="fa-solid fa-chevron-down"></i></div>
-            <div class="accordion-content">
-              <p>Join our community by clicking the 'Become an Advocate' button and filling out the necessary information to get started.</p>
-            </div>
-          </div>
-        
         </div>
         <div class="help">
-          <img src="./images/programs/5225086 1.png" alt="">
+          <img src="src/images/programs/5225086 1.png" alt="">
           <h3>Have Any More Questions?</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas voluptatibus earum quia suscipit officia distinctio, quos quod nulla soluta. Atque?</p>
+          <p>If you have any more questions, feel free to reach out to us by filling out the form below.</p>
           <form action="" method="post">
             <div class="form-group">
               <label for="email">Email Address</label>
               <input type="email" id="email" name="email" required>
-          </div>
+            </div>
             <div class="form-group">
               <label for="message">Your Message</label>
               <textarea id="message" name="message" rows="4" required></textarea>
-          </div>
-          <div class="form-group">
-            <button type="submit">Send</button>
-          </div>
+            </div>
+            <div class="form-group">
+              <button type="submit">Send</button>
+            </div>
           </form>
         </div>
       </div>
     </section>
+    
     
 
    
@@ -427,29 +421,29 @@
           <button class="button1">Join the community</button>
           <div class="button2">
             <button>Learn more</button>
-            <img src="./images/designs/Vector 7.png" alt="" />
+            <img src="src/images/designs/Vector 7.png" alt="" />
           </div>
         </div>
         
        </div>
        <div class="absolute i10">
-        <img src="./images/designs/x.png" alt="">
+        <img src="src/images/designs/x.png" alt="">
       </div>  
        <div class="absolute i11">
-        <img src="./images/designs/Frame2.png" alt="">
+        <img src="src/images/designs/Frame2.png" alt="">
       </div>  
        <div class="absolute i12">
-        <img src="./images/designs/Frame3.png" alt="">
+        <img src="src/images/designs/Frame3.png" alt="">
         <div class="mask1"></div>
       </div>  
        <div class="absolute i13">
-        <img src="./images/designs/Vector9.png" alt="">
+        <img src="src/images/designs/Vector9.png" alt="">
       </div>  
        <div class="absolute i14">
-        <img src="./images/designs/arrows-down-gold-HiEHHhkurD.png" alt="">
+        <img src="src/images/designs/arrows-down-gold-HiEHHhkurD.png" alt="">
       </div>  
        <div class="absolute i15">
-        <img src="./images/designs/Vector10.png" alt="">
+        <img src="src/images/designs/Vector10.png" alt="">
       </div>  
     </footer>
   </body>
