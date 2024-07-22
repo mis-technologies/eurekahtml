@@ -2,54 +2,342 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-    /* Colors */
-    --primary: #0279b9;
-    --secondary: #f4f4f4;
-    --accent: #fcbf49;
-    --pp: #a60874;
-    --gry: #a60874;
-    --grn: #7bffb3;
-  
-    /* Screen Sizes */
-    --sm: 640px;
-    --md: 768px;
-    --lg: 1024px;
-    --xl: 1280px;
-  
-    /* font family */
-    --basic-font: ui-sans-serif, system-ui;
-    --open-sans: "Open Sans", sans-serif;
-    --lato: "Lato", sans-serif;
-    --roboto: "Roboto", sans-serif;
-    --script: "Caveat", cursive;
+  /* Colors */
+  --primary: #0279b9;
+  --secondary: #f4f4f4;
+  --accent: #fcbf49;
+  --pp: #a60874;
+  --gry: #a60874;
+  --grn: #7bffb3;
+
+  /* Screen Sizes */
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+
+  /* font family */
+  --basic-font: ui-sans-serif, system-ui;
+  --open-sans: "Open Sans", sans-serif;
+  --lato: "Lato", sans-serif;
+  --roboto: "Roboto", sans-serif;
+  --script: "Caveat", cursive;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined", sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.script-font {
+  font-family: var(--script);
+  color: var(--grn);
+  font-size: 2rem;
+}
+
+.absolute {
+  position: absolute;
+}
+
+body {
+  width: 100%;
+  max-width: 1440px;
+  overflow-x: hidden;
+  margin-inline: auto;
+  position: relative;
+  font-family: var(--open-sans);
+}
+
+.navOpen {
+  display: flex;
+}
+
+/* Program active class */
+#header ul li.active {
+  border-bottom: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+#programContent .card {
+  width: 350px;
+  height: 450px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+#programContent .card .image-container {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#programContent .card .cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#programContent .card .cardContent p {
+  opacity: 50%;
+  font-size: small;
+}
+
+#programContent .card .cardContent a {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 15px;
+  font-weight: 600;
+  width: fit-content;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Popups */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.success {
+  display: none;
+}
+
+.loader img,
+.success img {
+  max-width: 200px;
+}
+
+/* previous card design to be chaged later */
+#events .container-box .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 360px);
+  grid-auto-rows: 180px;
+  gap: 1.5rem;
+}
+
+#events .container-box .cards .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#events .container-box .cards .card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+  color: #fff;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+#events .container-box .cards .card .content p {
+  margin: 0;
+}
+
+#events .container-box .cards .card .content .paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  visibility: hidden;
+}
+
+#events .container-box .cards .card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--pp);
+  opacity: 0.5;
+  z-index: -1;
+}
+
+#events .container-box .cards .card:nth-child(3):before {
+  background: var(--primary);
+}
+
+#events .container-box .cards .card:nth-child(4):before {
+  background: var(--primary);
+}
+
+#events .container-box .cards .card p {
+  font-size: small;
+  opacity: 0.8;
+  text-align: justify;
+  margin-bottom: 5rem;
+}
+
+#events .container-box .cards .card .img-container {
+  width: 80%;
+  overflow-x: hidden;
+  align-self: flex-end;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+}
+
+.row-1 {
+  grid-row: span 1;
+}
+
+.row-2 {
+  grid-row: span 2;
+}
+
+.row-3 {
+  grid-row: span 3;
+}
+
+/* Icons for Animation */
+.icurve2 {
+  z-index: 10;
+  animation: fbmovement 1.4s infinite linear;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 10%,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 90%,
+    transparent 90%,
+    transparent 100%
+  );
+  animation: slide 1.5s infinite;
+}
+
+.mask1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 10%,
+    rgba(244, 244, 244, 1) 10%,
+    rgba(244, 244, 244, 1) 90%,
+    transparent 90%,
+    transparent 100%
+  );
+  animation: slide 1.5s infinite;
+}
+
+.mask2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 10%,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 90%,
+    transparent 90%,
+    transparent 100%
+  );
+  animation: slide1 1.5s infinite;
+}
+
+/* Animations */
+
+@keyframes slide {
+  0% {
+    transform: translateX(-20px);
   }
 
-  * {
-    scroll-behavior: smooth;
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+@keyframes slide1 {
+  100% {
+    transform: translateX(200px);
   }
 
-  .material-symbols-outlined {
-    font-family: "Material Symbols Outlined", sans-serif;
-    font-weight: 900;
-    cursor: pointer;
-    font-size: 2rem;
+  0% {
+    transform: translateX(0px);
   }
-  
-  .script-font {
-    font-family: var(--script);
-    color: var(--grn);
+}
+
+@keyframes slideTransparency {
+  0%,
+  100% {
+    opacity: 1;
   }
-  
-  .absolute {
-    position: absolute;
+
+  50% {
+    opacity: 0.5;
   }
-  
-  body {
-    width: 100%;
-    max-width: 1440px;
-    margin-inline: auto;
-    position: relative;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
-  
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate1 {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fbmovement {
+  0%,
+  100% {
+    transform: translateX(-15px);
+  }
+
+  50% {
+    transform: translateX(0px);
+  }
+}
