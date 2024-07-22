@@ -26,88 +26,75 @@
       crossorigin="anonymous"
     ></script>
   </head>
-
   <body>
-    <!-- Nav Bar -->
     <header class="sticky top-0 left-0 z-50 bg-secondary">
       <nav class="flex justify-between items-center py-6 container">
         <div class="-translate-x-10">
-          <img src="/src/images/logo.png" alt="Eureka" />
+          <img src="/images/logo.png" alt="Eureka" />
         </div>
 
         <div
-          class="relative hidden md:flex flex-col items-start gap-6 md:flex-row md:min-w-[70%] md:items-center md:justify-between"
+          class="relative hidden md:flex items-center gap-6 justify-between min-w-[70%]"
           id="nav-bar"
         >
-          <div class="hidden">
-            <img src="/src/images/logo.png" alt="Eureka" />
-          </div>
-          <div class="block md:hidden">
-            <span class="material-symbols-outlined" id="closeMenu">
-              &#xe5cd;
-            </span>
-          </div>
-          <ul
-            class="fixed top-0 left-0 flex flex-col gap-12 md:relative md:flex-row md:items-center"
-          >
+          <ul class="flex gap-12 relative items-center">
             <li class="font-sans font-semibold hover:text-primary">
               <a href="#">Home</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#about">About</a>
+              <a href="#about">About Us</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
               <a href="./program.html">Programs</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#events">Event</a>
+              <a href="./contact.html">Contact Us</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
+              <a href="./faq.html">FAQ</a>
+            </li>
+            <li class="font-sans font-semibold hover:text-primary">
+              <a href="#">Blog</a>
             </li>
           </ul>
           <button
             class="bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
           >
-            Become an Advocate
+            <a href="register.html"> Become an Advocate </a>
           </button>
         </div>
+
         <!-- Mobile Nav Bar -->
         <div
-          class="relative hidden md:hidden items-start gap-6 md:flex-row md:min-w-[70%] md:items-center md:justify-between"
-          id="nav-bar"
+          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary md:hidden"
+          id="mobileNav"
         >
-          <div class="hidden">
-            <img src="/src/images/logo.png" alt="Eureka" />
-          </div>
-          <div class="block md:hidden">
-            <span class="material-symbols-outlined" id="closeMenu">
-              &#xe5cd;
-            </span>
-          </div>
           <ul
-            class="fixed top-0 left-0 flex flex-col gap-12 md:relative md:flex-row md:items-center"
+            class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
           >
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#">Home</a>
+              <a href="./index.html">Home</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#about">About</a>
+              <a href="#about">About Us</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
               <a href="./program.html">Programs</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#events">Event</a>
+              <a href="./contact.html">Contact Us</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
+              <a href="./faq.html">FAQ</a>
+            </li>
+            <li class="font-sans font-semibold hover:text-primary">
+              <a href="#">Blog</a>
             </li>
           </ul>
           <button
-            class="bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
+            class="bg-primary mt-3 p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
           >
-            Become an Advocate
+            <a href="register.html"> Become an Advocate </a>
           </button>
         </div>
 
@@ -116,6 +103,11 @@
             &#xe5d2;
           </span>
         </div>
+        <!-- <div class="block md:hidden">
+          <span class="material-symbols-outlined" id="closeMenu">
+            &#xe5cd;
+          </span>
+        </div> -->
       </nav>
     </header>
 

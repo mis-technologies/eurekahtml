@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eureka FAQ</title>
+    <title>Eureka</title>
     <link rel="stylesheet" href="/dist/output.css" />
     <link rel="stylesheet" href="/src/styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,20 +60,20 @@
           <button
             class="bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
           >
-            Become an Advocate
+            <a href="register.html"> Become an Advocate </a>
           </button>
         </div>
 
         <!-- Mobile Nav Bar -->
         <div
-          class="container absolute top-24 left-0 w-full py-10 flex flex-col items-start justify-center gap-6 rounded-lg bg-white md:hidden"
+          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary md:hidden"
           id="mobileNav"
         >
           <ul
             class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
           >
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#">Home</a>
+              <a href="./index.html">Home</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
               <a href="#about">About Us</a>
@@ -92,9 +92,9 @@
             </li>
           </ul>
           <button
-            class="bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
+            class="bg-primary mt-3 p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
           >
-            Become an Advocate
+            <a href="register.html"> Become an Advocate </a>
           </button>
         </div>
 
@@ -103,8 +103,14 @@
             &#xe5d2;
           </span>
         </div>
+        <!-- <div class="block md:hidden">
+              <span class="material-symbols-outlined" id="closeMenu">
+                &#xe5cd;
+              </span>
+            </div> -->
       </nav>
     </header>
+
     <section id="faq" class="container py-10">
       <h1 class="text-3xl font-bold pb-6 md:text-4xl">
         Frequently Asked Questions
