@@ -38,8 +38,9 @@
 
 .script-font {
   font-family: var(--script);
+  font-size: 24px;
+  font-weight: 400;
   color: var(--grn);
-  font-size: 2rem;
 }
 
 .absolute {

@@ -7,7 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-items");
 
   openMenu.addEventListener("click", () => {
-    // navBar.style.display = "flex";
+    if (openMenu.innerHTML === "&#xe5d2;") {
+      openMenu.innerHTML = "&#xe5cd;";
+    } else {
+      openMenu.innerHTML = "&#xe5d2;";
+    }
     navBar.classList.toggle("navOpen");
   });
 
