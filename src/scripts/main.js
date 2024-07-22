@@ -239,3 +239,77 @@ const popUp = () => {
 //     navbar.classList.remove("fixed-nav");
 //   }
 // });
+
+
+
+// script for the registration page
+
+document
+  .getElementById("continue-button")
+  .addEventListener("click", function () {
+    const firstForm = document.getElementById("contact-form");
+    const secondForm = document.getElementById("second-form");
+    const imageContainer = document.getElementById("image-container");
+    const formContainer = document.getElementById("form-container");
+
+    // Start the transition
+    formContainer.classList.add("transitioning", "move-right");
+    imageContainer.classList.add("transitioning", "move-left");
+
+    formContainer.addEventListener(
+      "transitionend",
+      function (event) {
+        if (event.target === formContainer) {
+          // Remove the initial transition classes
+          formContainer.classList.remove("transitioning", "move-right");
+          imageContainer.classList.remove("transitioning", "move-left");
+
+          // Apply the new position classes to keep them in place
+          formContainer.classList.add("new-position-form");
+          imageContainer.classList.add("new-position-image");
+
+          // Hide the first form
+          firstForm.classList.add("hidden");
+
+          // Show the second form
+          secondForm.classList.remove("hidden");
+        }
+      },
+      { once: true }
+    );
+  });
+
+document
+  .getElementById("apply-button")
+  .addEventListener("click", function () {
+    const submitPopup = document.getElementById("submit_popup");
+    const submitLoader = document.getElementById("submit_loader");
+    const submitSuccess = document.getElementById("submit_success");
+
+    // Show popup and loader
+    submitPopup.classList.add("show");
+    submitLoader.style.display = "block";
+
+    // Simulate a delay for loader before showing success
+    setTimeout(function () {
+      submitLoader.style.display = "none";
+      submitSuccess.style.display = "block";
+
+      // Redirect after 10 seconds
+      setTimeout(function () {
+        window.location.href = "index.html";
+      }, 2000);
+    }, 1000);
+  });
+
+// end of registration page script
+
+function scaleContent() {
+  const content = document.querySelector('body');
+  const scale = Math.min(window.innerWidth / content.offsetWidth, window.innerHeight / content.offsetHeight);
+  content.style.transform = `scale(${scale})`;
+  content.style.transformOrigin = 'top left';
+}
+
+window.addEventListener('resize', scaleContent);
+window.addEventListener('load', scaleContent);
