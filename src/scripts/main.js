@@ -168,21 +168,24 @@ document.addEventListener("DOMContentLoaded", () => {
   // End of card hover effect for the event section
 
   // Accordain Section
-  const accordionHeaders = document.querySelectorAll(".accordion-header");
+  // const accordionHeaders = document.querySelectorAll("#accordion-header");
 
-  accordionHeaders.forEach((header) => {
-    header.addEventListener("click", () => {
-      const content = header.nextElementSibling;
+  // accordionHeaders.style.display = "none";
 
-      header.classList.toggle("active");
+  // accordionHeaders.forEach((header) => {
+  //   header.addEventListener("click", () => {
+  //     alert("header clicked");
+  //     // const content = header.nextElementSibling;
 
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
-  });
+  //     // header.classList.toggle("active");
+
+  //     // if (content.style.display === "block") {
+  //     //   content.style.display = "none";
+  //     // } else {
+  //     //   content.style.display = "block";
+  //     // }
+  //   });
+  // });
 
   // End of DomContentLoaded
 });
