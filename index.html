@@ -28,21 +28,21 @@
   </head>
   <body>
     <header class="sticky top-0 left-0 z-50 bg-secondary">
-      <nav class="flex justify-between items-center py-6 container">
+      <nav class="flex justify-between items-center py-5 container">
         <div class="-translate-x-10">
           <img src="/images/logo.png" alt="Eureka" />
         </div>
 
         <div
-          class="relative hidden md:flex items-center gap-6 justify-between min-w-[70%]"
+          class="relative hidden md:flex items-center gap-6 justify-between min-w-[75%]"
           id="nav-bar"
         >
           <ul class="flex gap-12 relative items-center">
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#">Home</a>
+              <a href="#about">About Us</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#about">About Us</a>
+              <a href="#event">Event</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
               <a href="./program.html">Programs</a>
@@ -58,7 +58,7 @@
             </li>
           </ul>
           <button
-            class="bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
+            class="hidden md:block bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
           >
             <a href="register.html"> Become an Advocate </a>
           </button>
@@ -73,10 +73,10 @@
             class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
           >
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html">Home</a>
+              <a href="#about">About Us</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
-              <a href="#about">About Us</a>
+              <a href="#event">Event</a>
             </li>
             <li class="font-sans font-semibold hover:text-primary">
               <a href="./program.html">Programs</a>
@@ -103,24 +103,20 @@
             &#xe5d2;
           </span>
         </div>
-        <!-- <div class="block md:hidden">
-          <span class="material-symbols-outlined" id="closeMenu">
-            &#xe5cd;
-          </span>
-        </div> -->
       </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="hero" class="bg-secondary relative">
       <div
-        class="container flex flex-col md:flex-row justify-between h-full md:max-h-[38rem] py-12 gap-4"
+        class="container flex flex-col md:flex-row justify-between h-full md:max-h-[38rem] py-12 gap-4 pb-16"
       >
+        <!-- Hero Content -->
         <div
           class="flex flex-col w-full justify-center items-center gap-5 md:gap-8 md:w-1/2 md:items-start"
         >
           <h1
-            class="font-bold font-sans text-3xl text-center leading-normal md:text-start md:text-5xl md:leading-relaxed"
+            class="font-bold font-sans text-3xl text-center leading-normal md:text-start md:text-5xl md:leading-[1.3]"
           >
             Empower Education: Become an Advocate for Your School Today!
           </h1>
@@ -143,8 +139,9 @@
             </div>
           </div>
         </div>
+
         <!-- Hero Images -->
-        <div class="w-full md:w-1/2 relative inline-flex justify-center">
+        <div class="w-full md:w-1/2 relative inline-flex justify-center z-10">
           <div
             class="relative grid grid-cols-[repeat(2,2fr)] my-10 md:my-0 md:grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(2, 250px)] w-fit gap-3"
           >
@@ -156,12 +153,12 @@
                 alt=""
                 class="h-full w-full bg-accent rounded-tl-[70px]"
               />
-              <div class="absolute icurve2 -top-12 -left-10 md:-left-14">
+              <!-- <div class="absolute icurve2 -top-12 -left-10 md:-left-14">
                 <img
                   src="/images/designs/yellow-arrows-x8AhtWqjfw.png"
                   alt=""
                 />
-              </div>
+              </div> -->
             </div>
             <div class="h-44 md:h-52 relative p-2 bg-white">
               <img
@@ -185,7 +182,7 @@
                 alt=""
                 class="h-full w-full bg-[#DFD8D7] rounded-br-[70px]"
               />
-              <div class="absolute -right-2 -top-3 w-8 h-8">
+              <div class="absolute -right-2 top-[40%] w-8 h-8">
                 <img src="/images/designs/x.png" alt="" class="h-full w-full" />
               </div>
             </div>
@@ -196,6 +193,7 @@
             </div>
           </div>
         </div>
+
         <!-- Join botton for mobile -->
         <div
           class="flex flex-col items-center justify-center gap-4 md:hidden z-10"
@@ -216,15 +214,15 @@
       <div class="absolute bottom-0 left-0">
         <img src="/images/designs/Vector (3).png" alt="" />
       </div>
-      <div class="hidden md:block absolute top-20 left-0 scale-75">
-        <img src="/images/designs/Vector4.png" alt="" />
+      <div class="hidden md:block absolute top-20 left-0">
+        <img src="/images/designs/hero_blue_arrow.png" alt="" />
       </div>
       <div class="absolute top-0 right-0 overflow-hidden">
         <img src="/images/designs/Vector5.png" alt="" />
         <div class="mask1"></div>
       </div>
-      <div class="hidden md:block absolute bottom-0 right-0 -z-10 bg-red-200">
-        <img src="/images/designs/Vector (4).png" alt="" />
+      <div class="hidden md:block absolute bottom-0 right-[15%]">
+        <img src="/images/designs/hero_ellipse.png" alt="" />
       </div>
     </section>
 
@@ -268,15 +266,20 @@
     </div>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="relative">
       <div
-        class="container flex flex-col justify-between items-center gap-10 md:flex-row"
+        class="container flex flex-col justify-between items-center gap-10 md:flex-row pt-20"
       >
-        <div class="w-full md:w-1/2 overflow-hidden">
+        <div class="relative w-full md:w-1/2 z-10">
           <img
             src="/images/low-angle-multiracial-college-students BW 1.png"
             alt=""
             class="w-full h-auto"
+          />
+          <img
+            src="/images/designs/Frame 628898.png"
+            alt=""
+            class="absolute top-0 left-0 -translate-y-1/2 -translate-x-2 shadow-lg"
           />
         </div>
         <div class="w-full md:w-1/2 flex flex-col gap-4">
@@ -328,19 +331,22 @@
           </div>
         </div>
       </div>
-      <!-- <div class="absolute i5">
-          <img src="/images/designs/Vector (2).png" alt="">
-        </div>
-        <div class="absolute i6">
-          <img src="/images/designs/Vector10.png" alt="">
-        </div>  
-        <div class="absolute i7">
-          <img src="/images/designs/Vector4.png" alt="">
-        </div>  
-        <div class="absolute i8">
-          <img src="/images/designs/Vector.png" alt="">
-          <div class="mask2"></div>
-        </div>   -->
+      <div class="absolute top-24 left-0">
+        <img src="/images/designs/who_we_are_i_l.png" alt="" />
+      </div>
+      <div class="absolute top-0 left-1/2">
+        <img src="/images/designs/who_we_are_i_t.png" alt="" />
+      </div>
+      <div class="absolute bottom-24 right-0 scale-75">
+        <img src="/images/designs/who_we_are_i_r.png" alt="" />
+      </div>
+      <div class="absolute bottom-0 left-0 w-44 h-44">
+        <img
+          src="/images/designs/who_we_are_ellipse.png"
+          alt=""
+          class="w-full h-full"
+        />
+      </div>
     </section>
 
     <!-- Socials -->
@@ -398,56 +404,61 @@
         <div class="w-full md:w-1/2 md:max-w-80 flex flex-col gap-4">
           <h2 class="script-font">what we offer</h2>
           <h1 class="text-2xl font-bold">Our Programs</h1>
-          <p class="text-lg">
+          <p class="text-lg opacity-50">
             Lead curriculum, events, support, and community engagement. Shape
             education's future with us!
           </p>
           <button
-            class="bg-primary w-fit px-5 py-3 font-semibold text-white rounded-[2rem] cursor-pointer hover:opacity-80 hover:scale-105"
+            class="bg-primary w-fit mt-10 px-8 py-3 font-semibold text-white rounded-[2rem] cursor-pointer hover:opacity-80 hover:scale-105"
           >
             Become an Advocate
           </button>
         </div>
 
-        <div class="w-full md:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          class="w-full md:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm"
+        >
           <div
-            class="flex flex-col items-start p-6 bg-white rounded-2xl shadow-xl gap-4"
+            class="flex flex-col items-start p-3 bg-white rounded-2xl shadow-xl gap-4"
           >
             <img src="/images/icons/clarity_note-line.png" alt="" />
-            <h5 class="font-bold text-base">Curriculum Development</h5>
+            <h5 class="font-bold">Curriculum Development</h5>
             <p class="opacity-60">
               Shape engaging learning experiences by designing curriculum and
               promoting innovative teaching methods..
             </p>
           </div>
           <div
-            class="flex flex-col items-start p-6 bg-white rounded-2xl shadow-xl gap-4"
+            class="relative flex flex-col items-start p-3 bg-white rounded-2xl shadow-xl gap-4"
           >
             <img
               src="/images/icons/carbon_license-third-party (1).png"
               alt=""
             />
-            <h5 class="font-bold text-base">Event Organization & Management</h5>
+            <h5 class="font-bold">Event Organization & Management</h5>
             <p class="opacity-60">
               Lead in planning and executing school events, fostering a vibrant
               and inclusive community.
             </p>
+            <div class="absolute -bottom-1 right-0 scale-90 translate-y-1/3">
+              <img src="/images/designs/x.png" alt="" />
+            </div>
           </div>
           <div
-            class="flex flex-col items-start p-6 bg-white rounded-2xl shadow-xl gap-4"
+            class="flex flex-col items-start p-3 bg-white rounded-2xl shadow-xl gap-4"
           >
             <img src="/images/icons/la_chalkboard-teacher.png" alt="" />
-            <h5 class="font-bold text-base">Student Support & Mentoring</h5>
+            <h5 class="font-bold">Student Support & Mentoring</h5>
             <p class="opacity-60">
               Provide guidance and encouragement to students, helping them
               navigate challenges and reach their potential.
             </p>
           </div>
           <div
-            class="flex flex-col items-start p-6 bg-white rounded-2xl shadow-xl gap-4"
+            class="flex flex-col items-start p-3 bg-white rounded-2xl shadow-xl gap-4"
           >
             <img src="/images/icons/Vector (3).png" alt="" />
-            <h5 class="font-bold text-base">Community Engagement & Advocacy</h5>
+            <h5 class="font-bold">Community Engagement & Advocacy</h5>
             <p class="opacity-60">
               Advocate for student needs and collaborate with stakeholders to
               create a supportive educational environment.
@@ -456,16 +467,15 @@
         </div>
       </div>
 
-      <!-- <div class="absolute i5">
-        <img src="/images/designs/Vector7.png" alt="">
+      <div class="absolute bottom-0 left-0">
+        <img src="/images/designs/Vector7.png" alt="" />
       </div>
-      <div class="absolute i8">
-        <img src="/images/designs/Vector.png" alt="">
-        <div class="mask1"></div>
-      </div>  
-      <div class="absolute i9">
-        <img src="/images/designs/Vector (1).png" alt="">
-      </div>   -->
+      <div class="absolute bottom-0 left-1/2">
+        <img src="/images/designs/Vector.png" alt="" />
+      </div>
+      <div class="absolute bottom-0 right-0">
+        <img src="/images/designs/Vector (1).png" alt="" />
+      </div>
     </section>
 
     <!-- Events -->
