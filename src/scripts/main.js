@@ -1,196 +1,64 @@
-// When the DOM is loaded, execute this code
 document.addEventListener("DOMContentLoaded", () => {
   // Nav bar script
   const openMenu = document.getElementById("openMenu");
-  const closeMenu = document.getElementById("closeMenu");
   const navBar = document.getElementById("mobileNav");
-  const navLinks = document.querySelectorAll(".nav-items");
+  const navLinks = document.querySelectorAll("#mobileNav .nav-items a");
 
-  openMenu.addEventListener("click", () => {
-    if (openMenu.innerHTML === "&#xe5d2;") {
-      openMenu.innerHTML = "&#xe5cd;";
-    } else {
-      openMenu.innerHTML = "&#xe5d2;";
-    }
-    navBar.classList.toggle("navOpen");
-  });
+  // Debugging logs to check if elements are correctly selected
+  console.log("openMenu:", openMenu);
+  console.log("navBar:", navBar);
+  console.log("navLinks:", navLinks);
 
-  closeMenu.addEventListener("click", () => {
-    navBar.style.display = "none";
-  });
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      link.classList.toggle("active");
-      if (window.innerWidth <= 800) {
+  // Ensure necessary elements are present before attaching event listeners
+  if (openMenu && navBar) {
+    openMenu.addEventListener("click", () => {
+      navBar.classList.toggle("navOpen");
+      if (navBar.classList.contains("navOpen")) {
+        navBar.style.display = "flex";
+      } else {
         navBar.style.display = "none";
       }
     });
-  });
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 800) {
-      navBar.style.display = "flex";
+    if (navLinks.length > 0) {
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 800) {
+            navBar.style.display = "none";
+            navBar.classList.remove("navOpen");
+          }
+        });
+      });
     }
-  });
-  //  End of Nav bar script
 
-  // Card effect for the Event section
-  const cards = document.querySelectorAll(".card");
-  const card1 = document.getElementById("card-1");
-  const card2 = document.getElementById("card-2");
-  const card3 = document.getElementById("card-3");
-  const card4 = document.getElementById("card-4");
-
-  cards.forEach((card) => {
-    card.classList.add("row-2");
-  });
-
-  // card effect on bigger screens
-  if (window.innerWidth > 800) {
-    // card 1
-    card1.addEventListener("mouseover", () => {
-      card4.classList.remove("row-2");
-      card4.querySelector("img").style.visibility = "hidden";
-      card1.querySelector(".paragraph").style.visibility = "visible";
-      card1.classList.add("row-3");
-    });
-    card1.addEventListener("mouseout", () => {
-      card4.classList.add("row-2");
-      card4.querySelector("img").style.visibility = "visible";
-      card1.classList.remove("row-3");
-      card1.querySelector(".paragraph").style.visibility = "hidden";
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 800) {
+        navBar.style.display = "flex";
+        navBar.classList.remove("navOpen");
+      } else {
+        navBar.style.display = "none";
+      }
     });
 
-    // card 2
-    card2.addEventListener("mouseover", () => {
-      card4.classList.remove("row-2");
-      card4.querySelector("img").style.visibility = "hidden";
-      card2.classList.add("row-3");
-      card2.querySelector(".paragraph").style.visibility = "visible";
-    });
-    card2.addEventListener("mouseout", () => {
-      card4.classList.add("row-2");
-      card4.querySelector("img").style.visibility = "visible";
-      card2.classList.remove("row-3");
-      card2.querySelector(".paragraph").style.visibility = "hidden";
-    });
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector("header");
+      if (navbar) {
+        const navBarOffset = navbar.offsetTop;
 
-    // card 3
-    card3.addEventListener("mouseover", () => {
-      card1.classList.remove("row-2");
-      card1.querySelector("img").style.visibility = "hidden";
-      card3.classList.add("row-3");
-      card3.querySelector(".paragraph").style.visibility = "visible";
+        if (window.pageYOffset >= navBarOffset) {
+          navbar.classList.add("fixed-nav");
+        } else {
+          navbar.classList.remove("fixed-nav");
+        }
+      }
     });
-    card3.addEventListener("mouseout", () => {
-      card1.classList.add("row-2");
-      card1.querySelector("img").style.visibility = "visible";
-      card3.classList.remove("row-3");
-      card33.querySelector(".paragraph").style.visibility = "hidden";
-    });
-
-    // card 4
-    card4.addEventListener("mouseover", () => {
-      card2.classList.remove("row-2");
-      card2.querySelector("img").style.visibility = "hidden";
-      card3.classList.add("row-3");
-      card3.querySelector(".paragraph").style.visibility = "visible";
-    });
-    card4.addEventListener("mouseout", () => {
-      card3.classList.remove("row-3");
-      card2.classList.add("row-2");
-      card2.querySelector("img").style.visibility = "visible";
-      card3.querySelector(".paragraph").style.visibility = "hidden";
-    });
+  } else {
+    console.error("openMenu or navBar element not found.");
   }
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 640) {
-      // card 1
-      card1.addEventListener("mouseover", () => {
-        card4.classList.remove("row-2");
-        card4.querySelector("img").style.visibility = "hidden";
-        card1.querySelector(".paragraph").style.visibility = "visible";
-        card1.classList.add("row-3");
-      });
-      card1.addEventListener("mouseout", () => {
-        card4.classList.add("row-2");
-        card4.querySelector("img").style.visibility = "visible";
-        card1.classList.remove("row-3");
-        card1.querySelector(".paragraph").style.visibility = "hidden";
-      });
-
-      // card 2
-      card2.addEventListener("mouseover", () => {
-        card4.classList.remove("row-2");
-        card4.querySelector("img").style.visibility = "hidden";
-        card2.classList.add("row-3");
-        card2.querySelector(".paragraph").style.visibility = "visible";
-      });
-      card2.addEventListener("mouseout", () => {
-        card4.classList.add("row-2");
-        card4.querySelector("img").style.visibility = "visible";
-        card2.classList.remove("row-3");
-        card2.querySelector(".paragraph").style.visibility = "hidden";
-      });
-
-      // card 3
-      card3.addEventListener("mouseover", () => {
-        card1.classList.remove("row-2");
-        card1.querySelector("img").style.visibility = "hidden";
-        card3.classList.add("row-3");
-        card3.querySelector(".paragraph").style.visibility = "visible";
-      });
-      card3.addEventListener("mouseout", () => {
-        card1.classList.add("row-2");
-        card1.querySelector("img").style.visibility = "visible";
-        card3.classList.remove("row-3");
-        card33.querySelector(".paragraph").style.visibility = "hidden";
-      });
-
-      // card 4
-      card4.addEventListener("mouseover", () => {
-        card2.classList.remove("row-2");
-        card2.querySelector("img").style.visibility = "hidden";
-        card3.classList.add("row-3");
-        card3.querySelector(".paragraph").style.visibility = "visible";
-      });
-      card4.addEventListener("mouseout", () => {
-        card3.classList.remove("row-3");
-        card2.classList.add("row-2");
-        card2.querySelector("img").style.visibility = "visible";
-        card3.querySelector(".paragraph").style.visibility = "hidden";
-      });
-    }
-    console.log("window resize, please refresh page");
-  });
-  // End of card hover effect for the event section
-
-  // Accordain Section
-  // const accordionHeaders = document.querySelectorAll("#accordion-header");
-
-  // accordionHeaders.style.display = "none";
-
-  // accordionHeaders.forEach((header) => {
-  //   header.addEventListener("click", () => {
-  //     alert("header clicked");
-  //     // const content = header.nextElementSibling;
-
-  //     // header.classList.toggle("active");
-
-  //     // if (content.style.display === "block") {
-  //     //   content.style.display = "none";
-  //     // } else {
-  //     //   content.style.display = "block";
-  //     // }
-  //   });
-  // });
-
-  // End of DomContentLoaded
+  // End of Nav bar script
 });
 
-// Scrool to top function
+// Scroll to top function
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -201,122 +69,121 @@ const scrollToTop = () => {
 // Message Form
 const checkMessage = (formId) => {
   const form = document.getElementById(formId);
-  const name = form.querySelector(`input[name="name"]`).value;
-  const email = form.querySelector(`input[name="email"]`).value;
-  const phoneNumber = form.querySelector(`input[name="phone"]`).value;
-  const subject = form.querySelector(`input[name="subject"]`).value;
-  const message = form.querySelector(`textarea[name="message"]`).value;
+  if (form) {
+    const name = form.querySelector('input[name="name"]').value.trim();
+    const email = form.querySelector('input[name="email"]').value.trim();
+    const subject = form.querySelector('input[name="subject"]').value.trim();
+    const message = form.querySelector('textarea[name="message"]').value.trim();
 
-  // if (message.value.trim() < 11) {
-  //   alert("Please enter a message");
-  //   return false;
-  // }
+    let isValid = true;
 
-  popUp();
+    if (name === "" || email === "" || subject === "" || message === "") {
+      isValid = false;
+      alert("Please fill in all required fields.");
+    }
 
-  return false;
+    if (!isValid) {
+      event.preventDefault();
+      return false; // Prevent form submission if validation fails
+    }
+
+    popUp();
+  }
 };
 
+// Pop Up
 const popUp = () => {
-  const popUp = document.getElementById("popUp");
-  const loader = document.getElementById("loader");
-  const success = document.getElementById("success");
+  const submitPopup = document.getElementById("submit_popup");
+  const submitLoader = document.getElementById("submit_loader");
+  const submitSuccess = document.getElementById("submit_success");
 
-  popUp.classList.add("show");
+  if (submitPopup && submitLoader && submitSuccess) {
+    submitPopup.classList.add("show");
+    submitLoader.style.display = "block";
 
-  setTimeout(function () {
-    loader.style.display = "none";
-    success.style.display = "flex";
-
-    // Redirect after 10 seconds
     setTimeout(function () {
-      window.location.href = "index.html";
-    }, 2100);
-  }, 1000);
+      submitLoader.style.display = "none";
+      submitSuccess.style.display = "block";
+
+      // Redirect after 2 seconds
+      setTimeout(function () {
+        window.location.href = "index.html";
+      }, 2000);
+    }, 1000);
+  } else {
+    console.error("One or more elements for popUp function not found.");
+  }
 };
 
-// // Nav bar script
-// window.addEventListener("scroll", function () {
-//   var navbar = document.querySelector(".container");
-//   var navBarOffset = navbar.offsetTop;
+// Script for the registration page
+const applyButton = document.getElementById("apply-button");
+const continueButton = document.getElementById("continue-button");
 
-//   if (window.pageYOffset >= navBarOffset) {
-//     navbar.classList.add("fixed-nav");
-//   } else {
-//     navbar.classList.remove("fixed-nav");
-//   }
-// });
-
-
-
-// script for the registration page
-
-document
-  .getElementById("continue-button")
-  .addEventListener("click", function () {
+if (applyButton && continueButton) {
+  const transitioned = () => {
     const firstForm = document.getElementById("contact-form");
     const secondForm = document.getElementById("second-form");
     const imageContainer = document.getElementById("image-container");
     const formContainer = document.getElementById("form-container");
 
-    // Start the transition
-    formContainer.classList.add("transitioning", "move-right");
-    imageContainer.classList.add("transitioning", "move-left");
+    if (firstForm && secondForm && imageContainer && formContainer) {
+      formContainer.classList.add("transitioning", "move-right");
+      imageContainer.classList.add("transitioning", "move-left");
 
-    formContainer.addEventListener(
-      "transitionend",
-      function (event) {
-        if (event.target === formContainer) {
-          // Remove the initial transition classes
-          formContainer.classList.remove("transitioning", "move-right");
-          imageContainer.classList.remove("transitioning", "move-left");
+      formContainer.addEventListener(
+        "transitionend",
+        function (event) {
+          if (event.target === formContainer) {
+            formContainer.classList.remove("transitioning", "move-right");
+            imageContainer.classList.remove("transitioning", "move-left");
 
-          // Apply the new position classes to keep them in place
-          formContainer.classList.add("new-position-form");
-          imageContainer.classList.add("new-position-image");
+            formContainer.classList.add("new-position-form");
+            imageContainer.classList.add("new-position-image");
 
-          // Hide the first form
-          firstForm.classList.add("hidden");
+            firstForm.classList.add("hidden");
+            secondForm.classList.remove("hidden");
+          }
+        },
+        { once: true }
+      );
+    }
+  };
 
-          // Show the second form
-          secondForm.classList.remove("hidden");
-        }
-      },
-      { once: true }
-    );
-  });
-
-document
-  .getElementById("apply-button")
-  .addEventListener("click", function () {
-    const submitPopup = document.getElementById("submit_popup");
-    const submitLoader = document.getElementById("submit_loader");
-    const submitSuccess = document.getElementById("submit_success");
-
-    // Show popup and loader
-    submitPopup.classList.add("show");
-    submitLoader.style.display = "block";
-
-    // Simulate a delay for loader before showing success
-    setTimeout(function () {
-      submitLoader.style.display = "none";
-      submitSuccess.style.display = "block";
-
-      // Redirect after 10 seconds
-      setTimeout(function () {
-        window.location.href = "index.html";
-      }, 2000);
-    }, 1000);
-  });
-
-// end of registration page script
-
-function scaleContent() {
-  const content = document.querySelector('body');
-  const scale = Math.min(window.innerWidth / content.offsetWidth, window.innerHeight / content.offsetHeight);
-  content.style.transform = `scale(${scale})`;
-  content.style.transformOrigin = 'top left';
+  continueButton.addEventListener("click", transitioned);
+  applyButton.addEventListener("click", popUp);
 }
 
-window.addEventListener('resize', scaleContent);
-window.addEventListener('load', scaleContent);
+// Text animation
+const textContainer = document.getElementById("text-container");
+if (textContainer) {
+  const texts = [
+    { text: "an Advocate", colorClass: "color1" },
+    { text: "a Spokesman", colorClass: "color2" },
+    { text: "a Patron", colorClass: "color3" },
+  ];
+  let currentIndex = 0;
+  let forwardFlip = true;
+
+  setInterval(() => {
+    if (forwardFlip) {
+      textContainer.classList.add("flip-forward");
+    } else {
+      textContainer.classList.add("flip-backward");
+    }
+
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % texts.length;
+      textContainer.textContent = texts[currentIndex].text;
+
+      textContainer.classList.remove("color1", "color2", "color3", "color4");
+      textContainer.classList.add(texts[currentIndex].colorClass);
+
+      if (currentIndex === texts.length - 1) {
+        forwardFlip = !forwardFlip;
+      }
+
+      textContainer.classList.remove("flip-forward", "flip-backward");
+    }, 400);
+  }, 3000);
+}
+// End of registration page script

@@ -23,91 +23,15 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
-    
-    <link rel="stylesheet" href="./src/styles/style.css">
-    
+
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
 
-  <body class="h-screen flex flex-col items-center justify-center relative">
-    <header class="sticky top-0 left-0 z-50 bg-secondary">
-      <nav class="flex justify-between items-center py-5 container">
-        <div class="-translate-x-10">
-          <img src="/images/logo.png" alt="Eureka" />
-        </div>
-
-        <div
-          class="relative hidden md:flex items-center gap-6 justify-between min-w-[75%]"
-          id="nav-bar"
-        >
-          <ul class="flex gap-12 relative items-center">
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#about">About Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#events">Event</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#program">Programs</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./faq.html">FAQ</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./program.html">Blog</a>
-            </li>
-          </ul>
-          <button
-            class="hidden md:block bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
-          >
-            <a href="register.html"> Become an Advocate </a>
-          </button>
-        </div>
-
-        <!-- Mobile Nav Bar -->
-        <div
-          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary md:hidden"
-          id="mobileNav"
-        >
-          <ul
-            class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
-          >
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#about">About Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#events">Event</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#program">Programs</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./faq.html">FAQ</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./program.html">Blog</a>
-            </li>
-          </ul>
-          <button
-            class="bg-primary mt-3 p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
-          >
-            <a href="register.html"> Become an Advocate </a>
-          </button>
-        </div>
-
-        <div class="block md:hidden">
-          <span class="material-symbols-outlined" id="openMenu">
-            &#xe5d2;
-          </span>
-        </div>
-      </nav>
-    </header>
-  <body class="h-screen flex flex-col items-center justify-center relative overflow-hidden">
+  <body
+    class="h-screen flex flex-col items-center justify-center relative overflow-hidden"
+  >
     <div class="logo top-5 left-0 z-10 fixed">
       <a href="/">
         <img src="/images/logo.png" alt="Eureka" />
@@ -123,7 +47,7 @@
       >
         <img
           id="register-image"
-          src="./images/team.png"
+          src="./images//team.png"
           alt="Register"
           class="max-h-full w-full object-cover"
         />
@@ -135,10 +59,10 @@
         <div class="">
           <form id="contact-form" class="form mb-10">
             <h3
-              class="text-xl lg:text-3xl font-bold mb-6 tracking-wider lg:text-start mt-32"
+              class="text-xl lg:text-3xl font-bold mb-6 tracking-wider lg:text-start mt-32 text-flip-container"
             >
-              Join the community and <br />
-              become <span class="text-indigo-600">an Advocate</span>
+              Join the community and <br />become
+              <span class="text-primary" id="text-container">an Advocate</span>
             </h3>
             <div class="mb-4">
               <label class="block text-black font-semibold">Full Name</label>
@@ -194,7 +118,7 @@
               <button
                 id="continue-button"
                 type="button"
-                class="bg-indigo-600 w-full text-white px-4 py-2 rounded-full"
+                class="bg-blue-600 w-full text-white px-4 py-2 rounded-full"
               >
                 Continue
               </button>
@@ -202,10 +126,10 @@
           </form>
           <form id="second-form" class="form hidden">
             <h3
-              class="text-xl lg:text-3xl font-bold mb-4 tracking-wider text-start mt-12"
+              class="text-xl lg:text-3xl font-bold mb-6 tracking-wider lg:text-start mt-32 text-flip-container"
             >
-              Join the community and <br />
-              become <span class="text-indigo-600">an Advocate</span>
+              Join the community and <br />become
+              <span class="text-primary" id="text-container">an Advocate</span>
             </h3>
             <div class="mb-4">
               <label class="block text-black font-semibold"
@@ -259,7 +183,7 @@
               <button
                 id="apply-button"
                 type="button"
-                class="bg-indigo-600 w-full text-white px-4 py-2 rounded-full"
+                class="bg-blue-600 w-full text-white px-4 py-2 rounded-full"
               >
                 Apply
               </button>
@@ -271,16 +195,18 @@
 
     <!-- POPUP animation -->
     <div class="submit_popup" id="submit_popup">
+      <!-- Loader -->
       <div
-        class="submit_loader bg-white rounded-xl w-3/4 md:w-1/2 h-3/4 md:h-1/2 flex-col flex justify-center items-center"
+        class="submit_loader flex justify-center items-center"
         id="submit_loader"
       >
         <div class="flex items-center justify-center h-full w-full">
           <img src="./images/loader.gif" class="object-cover" alt="preloader" />
         </div>
       </div>
+      <!-- Popup  -->
       <div
-        class="submit_success bg-white rounded-xl w-3/4 md:w-1/2 h-3/4 md:h-1/2 flex items-center justify-center"
+        class="submit_success container bg-white rounded-xl w-full h-fit max-w-[580px] items-center justify-center translate-y-5 py-12"
         id="submit_success"
       >
         <div
@@ -288,11 +214,11 @@
         >
           <img src="./images/EnvelopMail.gif" alt="success" />
 
-          <div class="flex flex-col items-center w-full">
-            <p class="font-semibold text-center">
-              Application successfully sent!
+          <div class="flex flex-col items-center w-full text-primary gap-3">
+            <p class="font-semibold text-center text-xl">
+              Question Successfully sent!
             </p>
-            <p class="font-semibold text-center">
+            <p class="font-semibold text-center text-lg">
               We get back to you via email, thank you.
             </p>
           </div>

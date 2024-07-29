@@ -20,6 +20,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script
+    src="https://kit.fontawesome.com/b4b8be07f5.js"
+    crossorigin="anonymous"
+    ></script>
     <script src="/src/scripts/main.js"></script>
     <script
       src="https://kit.fontawesome.com/b4b8be07f5.js"
@@ -38,22 +42,22 @@
           id="nav-bar"
         >
           <ul class="flex gap-12 relative items-center">
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="#about">About Us</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="#events">Event</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="#program">Programs</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./contact.html">Contact Us</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./faq.html">FAQ</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./program.html">Blog</a>
             </li>
           </ul>
@@ -109,7 +113,7 @@
     <!-- Hero Section -->
     <section id="hero" class="bg-secondary relative">
       <div
-        class="container flex flex-col md:flex-row justify-between h-full md:max-h-[38rem] py-12 gap-4 pb-16"
+        class="container flex flex-col md:flex-row justify-between h-full md:max-h-[38rem] py-10 gap-4 pb-16"
       >
         <!-- Hero Content -->
         <div
@@ -121,19 +125,19 @@
             Empower Education: Become an Advocate for Your School Today!
           </h1>
           <h4
-            class="text-[22px] font-normal text-center opacity-60 md:text-start"
+            class="text-[20px] font-normal text-center opacity-60 md:text-start"
           >
             Lead the way in creating dynamic learning experiences and hosting
             impactful events. Join us in shaping a brighter future for
             education!"
           </h4>
-          <div class="hidden md:flex items-center gap-14">
+          <div class="hidden md:flex items-center gap-14 mt-5">
             <button
               class="bg-primary px-10 py-4 font-bold text-xl text-white rounded-[2rem] cursor-pointer hover:opacity-80 hover:scale-105"
             >
               Join the community
             </button>
-            <div class="flex flex-col items-center font-bold mx-auto">
+            <div class="flex flex-col items-center font-bold mx-auto justify-between gap-2">
               <p>It’s absolutely free.</p>
               <img src="/images/designs/Vector6.png" alt="" class="w-24" />
             </div>
@@ -141,7 +145,7 @@
         </div>
 
         <!-- Hero Images -->
-        <div class="w-full md:w-1/2 relative inline-flex justify-center z-10">
+        <div class="w-full md:w-1/2 relative inline-flex justify-center z-10 lg:justify-end md:pr-3">
           <div
             class="relative grid grid-cols-[repeat(2,2fr)] my-10 md:my-0 md:grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(2, 250px)] w-fit gap-3"
           >
@@ -151,7 +155,7 @@
               <img
                 src="/images/young-man-working-from-home BW 1.png"
                 alt=""
-                class="h-full w-full bg-accent rounded-tl-[70px]"
+                class="h-full w-full bg-accent rounded-tl-[70px] bg-opacity-60"
               />
               <!-- <div class="absolute icurve2 -top-12 -left-10 md:-left-14">
                 <img
@@ -164,7 +168,7 @@
               <img
                 src="/images/smiling-showing-hello-gesture-holding-folder-young-africanamerican-guy-isolated-blue-background BW 1.png"
                 alt=""
-                class="h-full w-full bg-primary"
+                class="h-full w-full bg-primary bg-opacity-80"
               />
             </div>
             <div
@@ -173,7 +177,7 @@
               <img
                 src="/images/positive-hipster-girl.png"
                 alt=""
-                class="h-full w-full bg-lightPurple rounded-bl-[70px]"
+                class="h-full w-full bg-lightPurple rounded-bl-[70px] bg-opacity-60"
               />
             </div>
             <div class="h-44 md:h-52 relative p-2 bg-white rounded-br-[70px]">
@@ -187,7 +191,7 @@
               </div>
             </div>
             <div
-              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-90 md:-left-0 md:top-[85%] md:scale-100"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-75 md:-left-0 md:top-[85%] "
             >
               <img src="/images/designs/Frame1.png" alt="" />
             </div>
@@ -227,10 +231,11 @@
     </section>
 
     <!--Partners  -->
+    <section class="container flex flex-col py-16 gap-12">    
     <div
-      class="container flex flex-col items-center justify-between py-16 md:flex-row gap-y-10"
+      class="flex flex-col items-center justify-between md:flex-row gap-y-10"
     >
-      <h2 class="text-2xl font-semibold text-center md:max-w-72 md:text-left">
+      <h2 class="text-3xl font-bold text-center md:max-w-[20rem] md:text-left font-lato">
         More than 50+ schools trust <span class="text-primary">Eureka</span>
       </h2>
       <div class="flex justify-between items-center gap-8 flex-wrap">
@@ -264,9 +269,11 @@
         </div>
       </div>
     </div>
+    <div class="h-[1.3px] w-full bg-primary"></div>
+  </section>
 
     <!-- About Section -->
-    <section id="about" class="relative">
+    <section id="about" class="relative overflow-hidden">
       <div
         class="container flex flex-col justify-between items-center gap-10 md:flex-row pt-20"
       >
@@ -279,10 +286,10 @@
           <img
             src="/images/designs/Frame 628898.png"
             alt=""
-            class="absolute top-0 left-0 -translate-y-1/2 -translate-x-2 shadow-lg"
+            class="absolute top-0 left-0 -translate-y-1/2 -translate-x-2 rounded-full shadow-lg drop-shadow-lg"
           />
         </div>
-        <div class="w-full md:w-1/2 flex flex-col gap-4">
+        <div class="w-full md:w-1/2 flex flex-col gap-5">
           <h2 class="script-font">Who we are</h2>
           <h1 class="text-2xl font-bold md:text-3xl">
             Join us: Embrace the power of Advocacy
@@ -292,7 +299,7 @@
             leadership experience to shaping the direction of education in your
             school.
           </p>
-          <ul class="grid grid-cols-2 w-full gap-4 md:gap-x-12">
+          <ul class="grid grid-cols-2 w-full gap-4 md:gap-x-12 mt-2">
             <li class="flex items-center gap-3">
               <img src="/images/icons/Check circle.png" alt="" /> Leadership
               experience
@@ -331,13 +338,13 @@
           </div>
         </div>
       </div>
-      <div class="absolute top-24 left-0">
+      <div class="absolute top-24 left-0 hidden md:block">
         <img src="/images/designs/who_we_are_i_l.png" alt="" />
       </div>
-      <div class="absolute top-0 left-1/2">
-        <img src="/images/designs/who_we_are_i_t.png" alt="" />
+      <div class="absolute top-0 left-1/2 rotate-12 -translate-y-5 -translate-x-14">
+        <img src="/images/designs/purple_top_i.png" alt="" />
       </div>
-      <div class="absolute bottom-24 right-0 scale-75">
+      <div class="absolute bottom-24 right-0 scale-75 hidden md:block">
         <img src="/images/designs/who_we_are_i_r.png" alt="" />
       </div>
       <div class="absolute bottom-0 left-0 w-44 h-44">
@@ -419,7 +426,7 @@
           class="w-full md:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm"
         >
           <div
-            class="flex flex-col items-start p-3 bg-white rounded-2xl shadow-xl gap-4"
+            class="flex flex-col items-start p-3 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow"
           >
             <img src="/images/icons/clarity_note-line.png" alt="" />
             <h5 class="font-bold">Curriculum Development</h5>
@@ -429,7 +436,7 @@
             </p>
           </div>
           <div
-            class="relative flex flex-col items-start p-3 bg-white rounded-2xl shadow-xl gap-4"
+            class="relative flex flex-col items-start p-3 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow"
           >
             <img
               src="/images/icons/carbon_license-third-party (1).png"
@@ -445,7 +452,7 @@
             </div>
           </div>
           <div
-            class="flex flex-col items-start p-3 bg-white rounded-2xl shadow-xl gap-4"
+            class="flex flex-col items-start p-3 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow"
           >
             <img src="/images/icons/la_chalkboard-teacher.png" alt="" />
             <h5 class="font-bold">Student Support & Mentoring</h5>
@@ -455,7 +462,7 @@
             </p>
           </div>
           <div
-            class="flex flex-col items-start p-3 bg-white rounded-2xl shadow-xl gap-4"
+            class="flex flex-col items-start p-3 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow"
           >
             <img src="/images/icons/Vector (3).png" alt="" />
             <h5 class="font-bold">Community Engagement & Advocacy</h5>
@@ -470,13 +477,91 @@
       <div class="absolute bottom-0 left-0">
         <img src="/images/designs/Vector7.png" alt="" />
       </div>
-      <div class="absolute bottom-5 right-0 translate-x-3">
+      <div class="absolute bottom-5 right-0 translate-x-3 hidden md:block">
         <img src="/images/designs/Vector.png" alt="" class="scale-75" />
       </div>
       <div class="absolute top-1/3 left-1/3 scale-75">
         <img src="/images/designs/Vector (1).png" alt="" />
       </div>
     </section>
+
+    <!-- Founders -->
+     <section id="founders" class="bg-white py-24 relative container md:py-16">
+      <h1 class="font-bold text-3xl text-center mb-10 md:mb-16">
+        The Brains Behind Eureka.
+      </h1>
+      <div class="flex flex-col items center justify-between gap-10 md:flex-row">
+        <!-- Marv -->
+        <div class="w-full md:w-1/2 max-w-lg flex flex-col items-center gap-6 gap-y-10 justify-between md:flex-row md:items-start">
+          <div class="img-container relative">
+            <div class="h-52 w-52 border-primary border-[8px] translate-y-6"></div>
+            <div class=" bg-[#DFDBD7] border-white border-[8px] h-52 w-52 translate-x-6 absolute top-0 right-0 pt-8">
+              <img src="./images/Marv.png" alt="" class="w-full h-full">
+            </div>
+          </div>
+          <div class="w-full max-w-64 space-y-2">
+            <h1 class="font-semibold text-xl">Ejeh Marvelous</h1>
+            <p class="opacity-80 font-light text-lg">Founder</p>
+            <div class="h-[1.2px] w-full bg-primary"></div>
+            <p class="text-sm font-normal ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rem consequatur quia. Ullam, distinctio deleniti. Quaerat voluptatem voluptatibus quos possimus itaque accusantium esse sunt! Voluptatum minima numquam placeat maxime incidunt voluptates ipsam repudiandae magnam voluptate nihil?</p>
+          </div>
+        </div>
+        <!-- Oche -->
+        <div class="w-full md:w-1/2 max-w-lg flex flex-col items-center gap-6 gap-y-10 justify-between md:flex-row md:items-start">
+          <div class="img-container relative">
+            <div class="h-52 w-52 border-accent border-[8px] translate-y-6"></div>
+            <div class=" bg-[#DFDBD7] border-white border-[8px] h-52 w-52 translate-x-6 absolute top-0 right-0 pt-8">
+              <img src="./images/Oche.png" alt="" class="w-full h-full">
+            </div>
+          </div>
+          <div class="w-full max-w-64 space-y-2">
+            <h1 class="font-semibold text-xl">Oche Solomon</h1>
+            <p class="opacity-80 font-light text-lg">Co-Founder</p>
+            <div class="h-[1.2px] w-full bg-primary"></div>
+            <p class="text-sm font-normal ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rem consequatur quia. Ullam, distinctio deleniti. Quaerat voluptatem voluptatibus quos possimus itaque accusantium esse sunt! Voluptatum minima numquam placeat maxime incidunt voluptates ipsam repudiandae magnam voluptate nihil?</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute top-0 left-10 md:left-[20rem]">
+        <img src="./images/designs/purple_top_i.png" alt="">
+      </div>
+     </section>
+
+    
+    <!-- Download Section -->
+    <section id="download" class="bg-secondary py-20 relative">
+      <div class="container w-full text-center relative flex flex-col items-center">
+        <h1 class="font-bold text-3xl">Download Eureka App Now!</h1>
+        <p class="opacity-50 mt-5">
+          Prepare and take your exams with confidence using our comprehensive platform
+        </p>
+
+        <div class="flex items-center justify-center gap-8 gap-y-4 flex-col md:flex-row text-white mt-14 max-w-lg ">
+          <button class="bg-primary rounded-2xl w-52 p-3 px-5 inline-flex gap-3 items-center transition-all duration-150 ease-in-out hover:bg-lightPurple hover:scale-105">
+            <img src="./images/playStore.png" alt=" ">
+            <div class="flex flex-col gap-1 items-start">
+              <p class="text-xs font-light">Get it on</p>
+              <h1 class="text-sm font-normal">Google Play</h1>
+            </div>
+          </button>
+          <button class="bg-primary rounded-2xl w-52 p-3 px-5 inline-flex gap-3 items-center transition-all duration-150 ease-in-out hover:bg-lightPurple hover:scale-105">
+            <img src="./images/appStore.png" alt=" ">
+            <div class="flex flex-col gap-1 items-start">
+              <p class="text-xs font-light">Get it on</p>
+              <h1 class="text-sm font-normal">Google Play</h1>
+            </div>
+          </button>
+        </div>
+        <div class="absolute top-8 left-0 scale-75 md:top-0 md:left-6 md:scale-90">        
+          <img src="./images/designs/downloadCurve.png" alt="">
+        </div>
+      </div>
+      
+      <div class="absolute bottom-0 right-0 hidden md:block">        
+        <img src="./images/designs/elipse.png" alt="">
+      </div>
+     </section>
 
     <!-- Events -->
     <section id="events" class="py-10 container">
@@ -499,122 +584,75 @@
           </button>
         </div>
 
-        <!-- Event Section cards -->
-        <div class="cards">
-          <div class="card" id="card-1">
-            <div class="content">
-              <h3>Virtual Escape Rooms</h3>
-              <p>
-                Create subject-specific escape rooms where students work
-                together online to solve puzzles and challenges to "escape."
-                This could be done in history, science, or even literature.
+       <div class="w-full md:w-2/3">
+        <div class="w-full flex flex-col items-center gap-5 md:flex-row justify-end">
+          <div id="cardContainer" class="w-full max-w-96">
+          <div class="event-card default" id="card1">
+            <h3 class="font-bold">Virtual Escape Rooms</h3>
+            <p class="font-light text-base text-justify">
+              Create subject-specific escape rooms where students work together online to solve puzzles and challenges to "escape." This could be done in history, science, or even literature.
+            </p>
+            <div class="hidden-content mt-2">
+              <p class="font-light text-base text-justify">
+                Create subject-specific escape rooms where students work together online to solve puzzles and challenges to "escape." This could be done in history, science, or even literature.
               </p>
-              <div class="paragraph">
-                <p>
-                  Create subject-specific escape rooms where students work
-                  together online to solve puzzles and challenges to "escape."
-                  This could be done in history, science, or even literature.
-                </p>
-                <p>
-                  Create subject-specific escape rooms where students work
-                  together online to solve puzzles and challenges to "escape."
-                  This could be done in history, science, or even literature.
-                </p>
-              </div>
             </div>
-            <div class="img-container">
-              <img
-                src="src/images/people-playing-wooden-tower-game 1.png"
-                alt=""
-              />
+            <div class="relative inline-flex justify-end translate-x-8">
+              <img src="/images/people-playing-wooden-tower-game 1.png" alt="" class="w-10/12 object-cover" />
             </div>
           </div>
-          <div class="card" id="card-2">
-            <div class="content">
-              <h3>Virtual Escape Rooms</h3>
-              <p>
-                Create subject-specific escape rooms where students work
-                together online to solve puzzles and challenges to "escape."
-                This could be done in history, science, or even literature.
+      
+          <div class="event-card default " id="card2">
+            <h3 class="font-bold">Virtual Escape Rooms</h3>
+            <p class="font-light text-base text-justify">
+              Create subject-specific escape rooms where students work together online to solve puzzles and challenges to "escape." This could be done in history, science, or even literature.
+            </p>
+            <div class="hidden-content mt-2">
+              <p class="font-light text-base text-justify">
+                Create subject-specific escape rooms where students work together online to solve puzzles and challenges to "escape." This could be done in history, science, or even literature.
               </p>
-              <div class="paragraph">
-                <p>
-                  Create subject-specific escape rooms where students work
-                  together online to solve puzzles and challenges to "escape."
-                  This could be done in history, science, or even literature.
-                </p>
-                <p>
-                  Create subject-specific escape rooms where students work
-                  together online to solve puzzles and challenges to "escape."
-                  This could be done in history, science, or even literature.
-                </p>
-              </div>
             </div>
-            <div class="img-container">
-              <img
-                src="src/images/people-playing-wooden-tower-game 1.png"
-                alt=""
-              />
+            <div class="relative inline-flex justify-end translate-x-8">
+              <img src="/images/people-playing-wooden-tower-game 1.png" alt="" class="w-10/12 object-cover" />
             </div>
           </div>
-          <div class="card" id="card-3">
-            <div class="content">
-              <h3>Virtual Escape Rooms</h3>
-              <p>
-                Create subject-specific escape rooms where students work
-                together online to solve puzzles and challenges to "escape."
-                This could be done in history, science, or even literature.
+          </div>
+      
+          <div id="cardContainer" class="w-full max-w-96">
+          <div class="event-card" id="card3">
+            <h3 class="font-bold">Virtual Escape Rooms</h3>
+            <p class="font-light text-base text-justify">
+              Create subject-specific escape rooms where students work together online to solve puzzles and challenges to "escape." This could be done in history, science, or even literature.
+            </p>
+            <div class="hidden-content mt-2">
+              <p class="font-light text-base text-justify">
+                Create subject-specific escape rooms where students work together online to solve puzzles and challenges to "escape." This could be done in history, science, or even literature.
               </p>
-              <div class="paragraph">
-                <p>
-                  Create subject-specific escape rooms where students work
-                  together online to solve puzzles and challenges to "escape."
-                  This could be done in history, science, or even literature.
-                </p>
-                <p>
-                  Create subject-specific escape rooms where students work
-                  together online to solve puzzles and challenges to "escape."
-                  This could be done in history, science, or even literature.
-                </p>
-              </div>
             </div>
-            <div class="img-container">
-              <img
-                src="src/images/people-playing-wooden-tower-game 1.png"
-                alt=""
-              />
+            <div class="relative inline-flex justify-end translate-x-8">
+              <img src="/images/people-playing-wooden-tower-game 1.png" alt="" class="w-10/12 object-cover" />
             </div>
           </div>
-          <div class="card" id="card-4">
-            <div class="content">
-              <h3>Virtual Escape Rooms</h3>
-              <p>
-                Create subject-specific escape rooms where students work
-                together online to solve puzzles and challenges to "escape."
-                This could be done in history, science, or even literature.
+      
+          <div class="event-card" id="card4">
+            <h3 class="font-bold">Virtual Escape Rooms</h3>
+            <p class="font-light text-base text-justify">
+              Create subject-specific escape rooms where students work together online to solve puzzles and challenges to "escape." This could be done in history, science, or even literature.
+            </p>
+            <div class="hidden-content mt-2">
+              <p class="font-light text-base text-justify">
+                Create subject-specific escape rooms where students work together online to solve puzzles and challenges to "escape." This could be done in history, science, or even literature.
               </p>
-              <div class="paragraph">
-                <p>
-                  Create subject-specific escape rooms where students work
-                  together online to solve puzzles and challenges to "escape."
-                  This could be done in history, science, or even literature.
-                </p>
-                <p>
-                  Create subject-specific escape rooms where students work
-                  together online to solve puzzles and challenges to "escape."
-                  This could be done in history, science, or even literature.
-                </p>
-              </div>
             </div>
-            <div class="img-container">
-              <img
-                src="src/images/people-playing-wooden-tower-game 1.png"
-                alt=""
-              />
+            <div class="relative inline-flex justify-end translate-x-8">
+              <img src="/images/people-playing-wooden-tower-game 1.png" alt="" class="w-10/12 object-cover" />
             </div>
+          </div>
           </div>
         </div>
-      </div>
+       </div>
+        
+    
 
       <!-- Event Icons -->
       <!-- <div class="absolute i16">
@@ -635,7 +673,7 @@
           Make a difference in your school today!
         </p>
         <div
-          class="flex justify-center items-start gap-10 w-full mt-10 md:gap-20"
+          class="flex flex-col justify-center items-center gap-5 w-full md:mt-10 md:flex-row md:items-start md:gap-20"
         >
           <button
             class="w-fit bg-primary px-5 py-3 font-semibold text-white rounded-[2rem] cursor-pointer hover:opacity-80 hover:scale-105"
@@ -644,7 +682,7 @@
           </button>
           <div class="flex flex-col items-center">
             <button
-              class="w-fit px-5 py-3 font-bold text-primary border-2 border-primary rounded-[2rem] cursor-pointer hover:opacity-80 hover:scale-105"
+              class="w-fit px-5 py-3 font-bold text-primary border-2 border-primary rounded-[2rem] cursor-pointer hover:bg-primary hover:text-white"
             >
               Learn more
             </button>
@@ -659,22 +697,93 @@
       <div class="hidden md:block absolute top-1/3 left-1/3 scale-90">
         <img src="/images/designs/x.png" alt="" />
       </div>
-      <div class="hidden md:block absolute top-1/4 left-[15%]">
+      <div class="absolute top-1/2 left-10 md:top-1/4 md:left-[15%]">
         <img src="/images/designs/Frame2.png" alt="" />
       </div>
-      <div class="hidden md:block absolute bottom-20 right-0">
+      <div class="absolute bottom-5 md:bottom-20 right-0">
         <img src="/images/designs/Frame3.png" alt="" />
         <div class="mask1"></div>
       </div>
       <div class="absolute bottom-0 left-0">
         <img src="/images/designs/Vector9.png" alt="" />
       </div>
-      <div class="absolute top-3 left-3 scale-50 -rotate-90">
+      <div class="absolute top-3 left-3 scale-50 -rotate-90 hidden md:block">
         <img src="/images/designs/footer-icon1.gif" alt="" />
       </div>
       <div class="hidden md:block absolute right-32 top-1/3 scale-75">
         <img src="/images/designs/footer-icon2.png" alt="" />
       </div>
     </footer>
+
+    <!-- Footer Socials -->
+     <div class="container flex flex-col items-center justify-between py-7 md:flex-row gap-y-10">
+      <img src="./images/logo.png" alt="" class="-translate-x-5">
+      <p class="opacity-50 text-sm text-center">&copy; 2024 Eureka. All rights reveserved. For inquries. contact: info@eureka.com</p>
+      <div class="flex items-center gap-6">
+        <a
+        href="https://whatapp.com"
+        target="_blank"        
+        ><i class="fab fa-whatsapp font-bold text-3xl"></i
+      ></a>   
+      <a
+        href="https://x.com"
+        target="_blank"     
+        ><i class="fab fa-x-twitter font-bold text-3xl"></i></i
+      ></a>
+      <a
+        href="https://telegram.com"
+        target="_blank"        
+        ><i class="fab fa-telegram-plane font-bold text-3xl"></i></a>       
+      <a
+        href="https://linkedin.com"
+        target="_blank"        
+        ><i class="fab fa-linkedin-in font-bold text-3xl"></i
+      ></a>       
+      </div>
+     </div>
+
+    <script>
+    const cards = document.querySelectorAll(".event-card");
+
+    const resetCards = () => {
+      cards.forEach(card => {
+        card.classList.remove("expanded", "collapsed");
+        card.classList.add("default");
+        card.querySelector(".hidden-content").style.display = "none";
+        card.querySelector("img").style.display = "block";
+      });
+    };
+
+    const expandCard = (cardToExpand, cardToCollapse) => {
+      resetCards();
+      cardToExpand.classList.remove("default", "collapsed");
+      cardToExpand.classList.add("expanded");
+      cardToExpand.querySelector(".hidden-content").style.display = "block";
+      cardToExpand.querySelector("img").style.display = "block";
+
+      cardToCollapse.classList.remove("default", "expanded");
+      cardToCollapse.classList.add("collapsed");
+      cardToCollapse.querySelector(".hidden-content").style.display = "none";
+      cardToCollapse.querySelector("img").style.display = "none";
+    };
+
+    cards.forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        if (card.id === "card1") {
+          expandCard(card, document.getElementById("card2"));
+        } else if (card.id === "card2") {
+          expandCard(card, document.getElementById("card1"));
+        } else if (card.id === "card3") {
+          expandCard(card, document.getElementById("card4"));
+        } else if (card.id === "card4") {
+          expandCard(card, document.getElementById("card3"));
+        }
+      });
+
+      card.addEventListener("mouseleave", resetCards);
+    });
+    
+    </script>
+
   </body>
 </html>
