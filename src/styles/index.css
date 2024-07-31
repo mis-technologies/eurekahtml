@@ -626,7 +626,7 @@ section {
 #events .container-box .cards .card .img-container {
   width: 80%;
   overflow-x: hidden;
-  align-self: flex-end;
+  align-self: flex-start;
   border-radius: 1rem;
   position: absolute;
   bottom: -3px;
@@ -660,7 +660,7 @@ section {
 
 #faq .accordion-item {
   background-color: #fff;
-  border: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
   border-radius: 1rem;
   padding: 1rem;
   width: 100%;
@@ -989,7 +989,7 @@ footer .content .buttons .button2 img {
 
   #events .container-box .cards .card .img-container {
     display: inline-flex;
-    justify-content: end;
+    justify-content: start;
   }
 }
 

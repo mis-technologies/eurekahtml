@@ -107,17 +107,18 @@
     </header>
 
     <section id="faq" class="container py-10">
-      <h1 class="text-3xl font-bold pb-6 md:text-4xl">
+      <h2 class="script-font mb-4">Engagement</h2>
+      <h1 class="text-3xl font-bold border-b-2 border-[#0279B9] pb-6 md:text-4xl">
         Frequently Asked Questions
       </h1>
-      <hr />
+      <!-- <hr class="text-[#0279B9] h-1" /> -->
       <div
         class="faq-section flex flex-col md:flex-row items-start justify-between gap-10 gap-y-20 mt-10"
       >
         <!-- Accordians -->
         <div class="accordion w-full md:max-w-xl flex flex-col gap-5">
           <div
-            class="accordion-item bg-white border-[#ddd] border-2 p-3 rounded-2xl w-full"
+            class="accordion-item bg-white border-b-[#0279B9] border-b-2 p-3 rounded-none w-full"
           >
             <div
               id="accordion-header"
@@ -133,7 +134,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#ddd] border-2 p-3 rounded-2xl w-full"
+            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full"
           >
             <div
               id="accordion-header"
@@ -150,7 +151,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#ddd] border-2 p-3 rounded-2xl w-full"
+            class="accordion-item bg-white border-b-[#0279B9] border-b-2 p-3 rounded-none w-full"
           >
             <div
               id="accordion-header"
@@ -168,7 +169,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#ddd] border-2 p-3 rounded-2xl w-full"
+            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full"
           >
             <div
               id="accordion-header"
@@ -184,7 +185,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#ddd] border-2 p-3 rounded-2xl w-full"
+            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full"
           >
             <div
               id="accordion-header"
@@ -202,7 +203,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#ddd] border-2 p-3 rounded-2xl w-full"
+            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full"
           >
             <div
               id="accordion-header"
@@ -246,7 +247,7 @@
                 name="email"
                 placeholder="Your email address"
                 ol
-                class="w-full p-4 rounded-2xl border-[#ddd] border-2 focus:outline-none"
+                class="w-full p-4 rounded-full border-[#ddd] border-2 focus:outline-none"
                 required
               />
             </div>
@@ -259,14 +260,14 @@
                 name="message"
                 rows="3"
                 placeholder="Type your message here"
-                class="w-full p-4 px-6 rounded-2xl border-[#ddd] border-2 focus:outline-none"
+                class="w-full p-4 px-6 rounded-3xl border-[#ddd] border-2 focus:outline-none"
                 required
               ></textarea>
             </div>
             <div class="form-group">
               <button
                 type="submit"
-                class="bg-primary w-48 py-3 font-bold text-white text-lg rounded-lg cursor-pointer hover:opacity-80 hover:scale-105"
+                class="bg-primary w-48 py-3 font-bold text-white text-lg rounded-full cursor-pointer hover:opacity-80 hover:scale-105"
               >
                 Send
               </button>
@@ -331,38 +332,38 @@
         });
       });
 
-      const popUp = () => {
-        const submitPopup = document.getElementById("submit_popup");
-        const submitLoader = document.getElementById("submit_loader");
-        const submitSuccess = document.getElementById("submit_success");
+      // const popUp = () => {
+      //   const submitPopup = document.getElementById("submit_popup");
+      //   const submitLoader = document.getElementById("submit_loader");
+      //   const submitSuccess = document.getElementById("submit_success");
 
-        if (!submitPopup || !submitLoader || !submitSuccess) {
-          console.error("One or more elements not found.");
-          return false;
-        }
+      //   if (!submitPopup || !submitLoader || !submitSuccess) {
+      //     console.error("One or more elements not found.");
+      //     return false;
+      //   }
 
-        try {
-          // Show popup and loader
-          submitPopup.classList.add("show");
-          submitLoader.style.display = "block";
+      //   try {
+      //     // Show popup and loader
+      //     submitPopup.classList.add("show");
+      //     submitLoader.style.display = "block";
 
-          // Simulate a delay for loader before showing success
-          setTimeout(() => {
-            submitLoader.style.display = "none";
-            submitSuccess.style.display = "block";
+      //     // Simulate a delay for loader before showing success
+      //     setTimeout(() => {
+      //       submitLoader.style.display = "none";
+      //       submitSuccess.style.display = "block";
 
-            // Redirect after 2 seconds
-            setTimeout(() => {
-              window.location.href = "index.html";
-            }, 2000);
-          }, 1000);
+      //       // Redirect after 2 seconds
+      //       setTimeout(() => {
+      //         window.location.href = "index.html";
+      //       }, 2000);
+      //     }, 1000);
 
-          return false; // Prevent form submission
-        } catch (error) {
-          console.error("An error occurred:", error);
-          return false;
-        }
-      };
+      //     return false; // Prevent form submission
+      //   } catch (error) {
+      //     console.error("An error occurred:", error);
+      //     return false;
+      //   }
+      // };
     </script>
   </body>
 </html>

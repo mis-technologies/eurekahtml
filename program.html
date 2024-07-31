@@ -1,279 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eureka</title>
-    <link rel="stylesheet" href="/dist/output.css" />
-    <link rel="stylesheet" href="/src/styles/main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <script src="/src/scripts/main.js"></script>
-    <script
-      src="https://kit.fontawesome.com/b4b8be07f5.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header class="sticky top-0 left-0 z-50 bg-secondary">
-      <nav class="flex justify-between items-center py-5 container">
-        <div class="-translate-x-10">
-          <img src="/images/logo.png" alt="Eureka" />
-        </div>
 
-        <div
-          class="relative hidden md:flex items-center gap-6 justify-between min-w-[75%]"
-          id="nav-bar"
-        >
-          <ul class="flex gap-12 relative items-center">
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#about">About Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#events">Event</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#program">Programs</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./faq.html">FAQ</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./program.html">Blog</a>
-            </li>
-          </ul>
-          <button
-            class="hidden md:block bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
-          >
-            <a href="register.html"> Become an Advocate </a>
-          </button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eureka</title>
+  <link rel="stylesheet" href="/dist/output.css" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script defer src="/src/scripts/main.js"></script>
+  <script defer src="https://kit.fontawesome.com/b4b8be07f5.js" crossorigin="anonymous"></script>
+</head>
 
-        <!-- Mobile Nav Bar -->
-        <div
-          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary md:hidden"
-          id="mobileNav"
-        >
-          <ul
-            class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
-          >
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#about">About Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#events">Event</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#program">Programs</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./faq.html">FAQ</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./program.html">Blog</a>
-            </li>
-          </ul>
-          <button
-            class="bg-primary mt-3 p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
-          >
-            <a href="register.html"> Become an Advocate </a>
-          </button>
-        </div>
-
-        <div class="block md:hidden">
-          <span class="material-symbols-outlined" id="openMenu">
-            &#xe5d2;
-          </span>
-        </div>
-      </nav>
-    </header>
-
-    <div
-      id="header"
-      class="container flex flex-col items-start justify-between py-10 gap-10 lg:flex-row lg:gap-20 lg:items-center"
-    >
-      <div
-        class="relative w-full p-1 rounded-lg bg-gray-300 max-w-80 focus-within:border-primary border-2"
-      >
-        <span class="absolute left-4 top-1/2 -translate-y-1/2">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </span>
-        <input
-          type="text"
-          name="search"
-          id="search"
-          class="w-full p-1 pl-10 text-sm font-semibold outline-none bg-transparent"
-          placeholder="Search a topic"
-        />
+<body>
+  <header class="sticky top-0 left-0 z-50 bg-secondary">
+    <nav class="flex justify-between items-center py-5 container">
+      <div class="-translate-x-10">
+        <img src="/images/logo.png" alt="Eureka" />
       </div>
-      <ul
-        class="flex items-center justify-center w-10/12 gap-8 gap-y-5 flex-wrap md:gap-10 md:flex-nowrap md:justify-between"
-      >
-        <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('trendingNow')"
-        >
-          Trending Now
-        </li>
-        <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('technology')"
-        >
-          Technology
-        </li>
-        <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('marketing')"
-        >
-          Marketing
-        </li>
-        <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('trendingNow')"
-        >
-          Trending Now
-        </li>
-        <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('technology')"
-        >
-          Technology
-        </li>
-        <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('marketing')"
-        >
-          Marketing
-        </li>
-      </ul>
+
+      <div class="relative hidden md:flex items-center gap-6 justify-between min-w-[75%]" id="nav-bar">
+        <ul class="flex gap-12 relative items-center">
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./index.html#about">About Us</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./index.html#events">Event</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./index.html#program">Programs</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./contact.html">Contact Us</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./faq.html">FAQ</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./program.html">Blog</a>
+          </li>
+        </ul>
+        <button
+          class="hidden md:block bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105">
+          <a href="register.html"> Become an Advocate </a>
+        </button>
+      </div>
+
+      <!-- Mobile Nav Bar -->
+      <div
+        class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary md:hidden"
+        id="mobileNav">
+        <ul class="flex flex-col gap-12 md:relative md:flex-row md:items-center">
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./index.html#about">About Us</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./index.html#events">Event</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./index.html#program">Programs</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./contact.html">Contact Us</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./faq.html">FAQ</a>
+          </li>
+          <li class="font-sans font-semibold hover:text-primary">
+            <a href="./program.html">Blog</a>
+          </li>
+        </ul>
+        <button
+          class="bg-primary mt-3 p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105">
+          <a href="register.html"> Become an Advocate </a>
+        </button>
+      </div>
+
+      <div class="block md:hidden">
+        <span class="material-symbols-outlined" id="openMenu">
+          &#xe5d2;
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <div id="header"
+    class="container flex flex-col items-start justify-between py-10 gap-10 lg:flex-row lg:gap-20 lg:items-center">
+    <div class="relative w-full p-1 rounded-xl bg-gray-300 max-w-80 focus-within:border-primary border-2">
+      <span class="absolute left-4 top-1/2 -translate-y-1/2">
+        <i class="fa-solid fa-magnifying-glass opacity-60"></i>
+      </span>
+      <input type="text" name="search" id="search"
+        class="w-full p-1 pl-10 text-sm font-semibold outline-none bg-transparent" placeholder="Search a topic" />
     </div>
+    <ul
+      class="flex items-center justify-center w-10/12 gap-8 gap-y-5 flex-wrap md:gap-10 md:flex-nowrap md:justify-between">
+      <li class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+        onclick="showSection('trendingNow')">
+        Trending Now
+      </li>
+      <li class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+        onclick="showSection('technology')">
+        Technology
+      </li>
+      <li class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+        onclick="showSection('marketing')">
+        Marketing
+      </li>
+      <li class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+        onclick="showSection('trendingNow')">
+        Trending Now
+      </li>
+      <li class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+        onclick="showSection('technology')">
+        Technology
+      </li>
+      <li class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+        onclick="showSection('marketing')">
+        Marketing
+      </li>
+    </ul>
+  </div>
 
-    <div
-      id="programContent"
-      class="container flex flex-wrap gap-8 items-center justify-between mb-8"
-    ></div>
+  <div id="programContent" class="container flex flex-wrap gap-8 items-center justify-between mb-8"></div>
 
-    <script type="module">
-      import {
-        trendingNow,
-        technology,
-        marketing,
-      } from "./src/scripts/data.js";
+  <script type="module">
+    import {
+      trendingNow,
+      technology,
+      marketing,
+    } from "./src/scripts/data.js";
 
-      // Function to render card dynamically
-      const renderCards = (cards) => {
-        const contentDiv = document.getElementById("programContent");
-        contentDiv.innerHTML = "";
+    // Function to render card dynamically
+    const renderCards = (cards) => {
+      const contentDiv = document.getElementById("programContent");
+      contentDiv.innerHTML = "";
 
-        cards.forEach((card) => {
-          const cardDiv = document.createElement("div");
-          cardDiv.className = "card";
-          //cardDiv.onclick = () => navigateTo(card);
+      cards.forEach((card) => {
+        const cardDiv = document.createElement("div");
+        cardDiv.className = "card";
+        //cardDiv.onclick = () => navigateTo(card);
 
-          const cardImage = document.createElement("div");
-          cardImage.className = "image-container";
+        const cardImage = document.createElement("div");
+        cardImage.className = "image-container";
 
-          const cardContent = document.createElement("div");
-          cardContent.className = "cardContent";
+        const cardContent = document.createElement("div");
+        cardContent.className = "cardContent";
 
-          const cardTitle = document.createElement("h4");
-          cardTitle.textContent = card.title;
+        const cardTitle = document.createElement("h4");
+        cardTitle.textContent = card.title;
 
-          const details = document.createElement("p");
-          details.textContent = card.content;
+        const details = document.createElement("p");
+        details.textContent = card.content;
 
-          const image = document.createElement("img");
-          image.src = card.image;
-          image.alt = card.title;
+        const image = document.createElement("img");
+        image.src = card.image;
+        image.alt = card.title;
 
-          const cardDate = document.createElement("h6");
-          cardDate.textContent = card.date;
+        const cardDate = document.createElement("h6");
+        cardDate.textContent = card.date;
 
-          const cardLink = document.createElement("a");
-          cardLink.href = `./program.html#${card.title.replace(/\s+/g, "_")}`;
-          cardLink.textContent = "Read article";
-          cardLink.onclick = (e) => {
-            e.preventDefault();
-            navigateTo(card);
-          };
+        const cardLink = document.createElement("a");
+        cardLink.href = `./program.html#${card.title.replace(/\s+/g, "_")}`;
+        cardLink.textContent = "Read article";
+        cardLink.onclick = (e) => {
+          e.preventDefault();
+          navigateTo(card);
+        };
 
-          cardDiv.appendChild(cardImage);
-          cardDiv.appendChild(cardContent);
-          cardImage.appendChild(image);
-          cardContent.appendChild(cardTitle);
-          cardContent.appendChild(details);
-          cardContent.appendChild(cardDate);
-          cardContent.appendChild(cardLink);
-          contentDiv.appendChild(cardDiv);
-        });
-      };
+        cardDiv.appendChild(cardImage);
+        cardDiv.appendChild(cardContent);
+        cardImage.appendChild(image);
+        cardContent.appendChild(cardTitle);
+        cardContent.appendChild(details);
+        cardContent.appendChild(cardDate);
+        cardContent.appendChild(cardLink);
+        contentDiv.appendChild(cardDiv);
+      });
+    };
 
-      //  function to navigate to differnt section on the page
-      const showSection = (section) => {
-        const miniNavs = document.querySelectorAll(".mini-nav");
-        miniNavs.forEach((nav) => nav.classList.remove("active"));
+    //  function to navigate to differnt section on the page
+    const showSection = (section) => {
+      const miniNavs = document.querySelectorAll(".mini-nav");
+      miniNavs.forEach((nav) => nav.classList.remove("active"));
 
-        if (section === "trendingNow") {
-          renderCards(trendingNow);
-          document
-            .querySelector(`.mini-nav[onclick="showSection('trendingNow')"]`)
-            .classList.add("active");
-        } else if (section === "technology") {
-          renderCards(technology);
-          document
-            .querySelector(`.mini-nav[onclick="showSection('technology')"]`)
-            .classList.add("active");
-        } else if (section === "marketing") {
-          renderCards(marketing);
-          document
-            .querySelector(`.mini-nav[onclick="showSection('marketing')"]`)
-            .classList.add("active");
-        }
-      };
+      if (section === "trendingNow") {
+        renderCards(trendingNow);
+        document
+          .querySelector(`.mini-nav[onclick="showSection('trendingNow')"]`)
+          .classList.add("active");
+      } else if (section === "technology") {
+        renderCards(technology);
+        document
+          .querySelector(`.mini-nav[onclick="showSection('technology')"]`)
+          .classList.add("active");
+      } else if (section === "marketing") {
+        renderCards(marketing);
+        document
+          .querySelector(`.mini-nav[onclick="showSection('marketing')"]`)
+          .classList.add("active");
+      }
+    };
 
-      window.showSection = showSection;
+    window.showSection = showSection;
 
-      // function to render the article of each card clicked
-      const navigateTo = (card) => {
-        const contentDiv = document.getElementById("programContent");
-        contentDiv.innerHTML = `
+    // function to render the article of each card clicked
+    const navigateTo = (card) => {
+      const contentDiv = document.getElementById("programContent");
+      contentDiv.innerHTML = `
             <div class="container flex flex-col items-center gap-8 w-full max-w-[1024px] mx-auto">
-                <h1 class="font-bold text-3xl uppercase">${card.title}</h1>
-                <img src="${card.image}" alt="${card.title} class="w-full h-autp md:w-auto md:h-80" />
-                <p class="font-semibold">${card.content}</p>
-                <p class="text-base text-justify">${card.article}</p>
-                <p class="text-base text-justify">${card.article}</p>
-                <p class="font-bold italic">Date: ${card.date}</p>
-            </div>
+      <h1 class="font-bold text-3xl uppercase">${card.title}</h1>
+      <img src="${card.image}" alt="${card.title} class="w-full h-autp md:w-auto md:h-80" />
+      <p class="font-semibold">${card.content}</p>
+      <p class="text-base text-justify">${card.article}</p>
+      <p class="text-base text-justify">${card.article}</p>
+      <p class="font-bold italic">Date: ${card.date}</p>
+  </div>
             `;
 
-        // Displaying the param but not working active now
-        history.pushState(
-          null,
-          "",
-          `./program.html#${card.title.replace(/\s+/g, "_")}`
-        );
-      };
+      // Displaying the param but not working active now
+      history.pushState(
+        null,
+        "",
+        `./program.html#${card.title.replace(/\s+/g, "_")}`
+      );
+    };
 
-      showSection("trendingNow");
-    </script>
-  </body>
+    showSection("trendingNow");
+  </script>
+</body>
+
 </html>
