@@ -129,8 +129,6 @@ body {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  justify-content: space-between;
 }
 
 .event-card:nth-child(odd) {
@@ -138,7 +136,7 @@ body {
 }
 
 .default {
-  height: 400px;
+  height: 360px;
 }
 
 .expanded {
