@@ -20,12 +20,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <script src="/src/scripts/main.js"></script>
+    <script defer src="/src/scripts/main.js"></script>
     <script
+      defer
       src="https://kit.fontawesome.com/b4b8be07f5.js"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <header class="sticky top-0 left-0 z-50 bg-secondary">
       <nav class="flex justify-between items-center py-5 container">
@@ -111,10 +113,10 @@
       class="container flex flex-col items-start justify-between py-10 gap-10 lg:flex-row lg:gap-20 lg:items-center"
     >
       <div
-        class="relative w-full p-1 rounded-lg bg-gray-300 max-w-80 focus-within:border-primary border-2"
+        class="relative w-full p-1 rounded-xl bg-gray-300 max-w-80 focus-within:border-primary border-2"
       >
         <span class="absolute left-4 top-1/2 -translate-y-1/2">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass opacity-60"></i>
         </span>
         <input
           type="text"
@@ -125,7 +127,7 @@
         />
       </div>
       <ul
-        class="flex items-center justify-center w-10/12 gap-8 gap-y-5 flex-wrap md:gap-10 md:flex-nowrap md:justify-between"
+        class="flex items-start justify-center w-full gap-8 gap-y-5 flex-wrap md:w-10/12 md:gap-10 md:flex-nowrap md:justify-between md:items-center"
       >
         <li
           class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
@@ -170,6 +172,27 @@
       id="programContent"
       class="container flex flex-wrap gap-8 items-center justify-between mb-8"
     ></div>
+    <template id="cardTemplate">
+      <div class="card w-full max-w-[350px] space-y-4 text-[15px]">
+        <div class="image-container">
+          <img src="" alt="" />
+        </div>
+        <div class="cardContent space-y-3">
+          <h4 class="font-bold"></h4>
+          <p class="opacity-50 text-[13px]"></p>
+          <h6 class="font-bold text-[11px]"></h6>
+          <a
+            href="#"
+            class="bg-primary rounded-[5px] p-2 font-bold text-white text-[12px] inline-flex items-center justify-between gap-x-2 hover:bg-opacity-85"
+          >
+            <span>Read article </span>
+            <span
+              class="border-2 border-white rounded-full inline-flex items-center w-5 h-5"
+              ><i class="fa-solid fa-arrow-right text-xs"></i></span
+          ></a>
+        </div>
+      </div>
+    </template>
 
     <script type="module">
       import {
@@ -184,44 +207,29 @@
         contentDiv.innerHTML = "";
 
         cards.forEach((card) => {
-          const cardDiv = document.createElement("div");
-          cardDiv.className = "card";
-          //cardDiv.onclick = () => navigateTo(card);
+          const cardTemplate = document
+            .querySelector("#cardTemplate")
+            .content.cloneNode(true);
 
-          const cardImage = document.createElement("div");
-          cardImage.className = "image-container";
+          const cardDiv = cardTemplate.querySelector(".card");
+          const image = cardDiv.querySelector("img");
+          const title = cardDiv.querySelector("h4");
+          const details = cardDiv.querySelector("p");
+          const cardDate = cardDiv.querySelector("h6");
+          const cardLink = cardDiv.querySelector("a");
 
-          const cardContent = document.createElement("div");
-          cardContent.className = "cardContent";
-
-          const cardTitle = document.createElement("h4");
-          cardTitle.textContent = card.title;
-
-          const details = document.createElement("p");
-          details.textContent = card.content;
-
-          const image = document.createElement("img");
           image.src = card.image;
           image.alt = card.title;
-
-          const cardDate = document.createElement("h6");
+          title.textContent = card.title;
+          details.textContent = card.content;
           cardDate.textContent = card.date;
 
-          const cardLink = document.createElement("a");
           cardLink.href = `./program.html#${card.title.replace(/\s+/g, "_")}`;
-          cardLink.textContent = "Read article";
           cardLink.onclick = (e) => {
             e.preventDefault();
             navigateTo(card);
           };
 
-          cardDiv.appendChild(cardImage);
-          cardDiv.appendChild(cardContent);
-          cardImage.appendChild(image);
-          cardContent.appendChild(cardTitle);
-          cardContent.appendChild(details);
-          cardContent.appendChild(cardDate);
-          cardContent.appendChild(cardLink);
           contentDiv.appendChild(cardDiv);
         });
       };
@@ -256,13 +264,13 @@
         const contentDiv = document.getElementById("programContent");
         contentDiv.innerHTML = `
             <div class="container flex flex-col items-center gap-8 w-full max-w-[1024px] mx-auto">
-                <h1 class="font-bold text-3xl uppercase">${card.title}</h1>
-                <img src="${card.image}" alt="${card.title} class="w-full h-autp md:w-auto md:h-80" />
-                <p class="font-semibold">${card.content}</p>
-                <p class="text-base text-justify">${card.article}</p>
-                <p class="text-base text-justify">${card.article}</p>
-                <p class="font-bold italic">Date: ${card.date}</p>
-            </div>
+      <h1 class="font-bold text-3xl uppercase">${card.title}</h1>
+      <img src="${card.image}" alt="${card.title} class="w-full h-autp md:w-auto md:h-80" />
+      <p class="font-semibold">${card.content}</p>
+      <p class="text-base text-justify">${card.article}</p>
+      <p class="text-base text-justify">${card.article}</p>
+      <p class="font-bold italic">Date: ${card.date}</p>
+  </div>
             `;
 
         // Displaying the param but not working active now

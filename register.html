@@ -28,11 +28,10 @@
     <link rel="stylesheet" href="/dist/output.css" />
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
-
   <body
     class="h-screen flex flex-col items-center justify-center relative overflow-hidden"
   >
-    <div class="logo top-5 left-0 z-10 fixed">
+    <div class="logo top-5 left-0 z-10 absolute">
       <a href="/">
         <img src="/images/logo.png" alt="Eureka" />
       </a>
@@ -52,12 +51,15 @@
           class="max-h-full w-full object-cover"
         />
       </div>
+
+      <!-- Forms -->
       <div
         id="form-container"
-        class="w-full md:w-1/2 h-full flex flex-col justify-center p-8 lg:px-12 rounded-lg"
+        class="w-full md:w-1/2 h-full flex flex-col justify-center p-8 lg:px-12 rounded-lg overflow-y-scroll hide-scrollbar"
       >
         <div class="">
-          <form id="contact-form" class="form mb-10">
+          <!-- form one -->
+          <form id="signUpForm" class="form mb-10">
             <h3
               class="text-xl lg:text-3xl font-bold mb-6 tracking-wider lg:text-start mt-32 text-flip-container"
             >
@@ -118,12 +120,15 @@
               <button
                 id="continue-button"
                 type="button"
-                class="bg-blue-600 w-full text-white px-4 py-2 rounded-full"
+                class="bg-blue-600 w-full text-white px-4 mt-5 py-2 rounded-full disabled:bg-[#D9D9D9]"
+                disabled
               >
                 Continue
               </button>
             </div>
           </form>
+
+          <!-- Form two -->
           <form id="second-form" class="form hidden">
             <h3
               class="text-xl lg:text-3xl font-bold mb-6 tracking-wider lg:text-start mt-32 text-flip-container"
@@ -183,12 +188,19 @@
               <button
                 id="apply-button"
                 type="button"
-                class="bg-blue-600 w-full text-white px-4 py-2 rounded-full"
+                class="bg-blue-600 w-full text-white px-4 py-2 mt-5 rounded-full disabled:bg-[#D9D9D9]"
+                disabled
               >
                 Apply
               </button>
             </div>
           </form>
+
+          <!-- Dots -->
+          <div class="flex justify-center mt-4">
+            <span id="dot1" class="dot active"></span>
+            <span id="dot2" class="dot"></span>
+          </div>
         </div>
       </div>
     </section>

@@ -20,6 +20,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script defer src="/src/scripts/main.js"></script>
     <script
       src="https://kit.fontawesome.com/b4b8be07f5.js"
       crossorigin="anonymous"
@@ -117,14 +118,8 @@
           </p>
 
           <!-- Form -->
-          <form
-            id="contactForm"
-            class="max-w-96 font-lato"
-            onsubmit="return popUp()"
-          >
-            <!-- onsubmit="return popUp()" -->
-            <!-- onsubmit="return checkMessage('contactForm')" -->
-            <!-- onsubmit="return test()" -->
+          <form id="contactForm" class="max-w-96 font-lato">
+
             <div class="mb-3">
               <label class="block mb-1 font-semibold text-base" for="name"
                 >Name</label
@@ -187,7 +182,7 @@
                 id="message"
                 name="message"
                 rows="2"
-                class="w-full p-3 px-4 border-[#ccc] border-2 text-base rounded-2xl"
+                class="w-full p-3 px-4 border-[#ccc] border-2 text-base rounded-3xl"
                 placeholder=""
               ></textarea>
             </div>
@@ -297,41 +292,5 @@
         </div>
       </div>
     </div>
-
-    <script>
-      const popUp = () => {
-  const submitPopup = document.getElementById("submit_popup");
-  const submitLoader = document.getElementById("submit_loader");
-  const submitSuccess = document.getElementById("submit_success");
-
-  if (!submitPopup || !submitLoader || !submitSuccess) {
-    console.error("One or more elements not found.");
-    return false;
-  }
-
-  try {
-    // Show popup and loader
-    submitPopup.classList.add("show");
-    submitLoader.style.display = "block";
-
-    // Simulate a delay for loader before showing success
-    setTimeout(() => {
-      submitLoader.style.display = "none";
-      submitSuccess.style.display = "block";
-
-      // Redirect after 2 seconds
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 2000);
-    }, 1000);
-
-    return false; // Prevent form submission
-  } catch (error) {
-    console.error("An error occurred:", error);
-    return false;
-  }
-};
-
-    </script>
   </body>
 </html>
