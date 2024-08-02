@@ -41,7 +41,7 @@
 
 .script-font {
   font-family: var(--script);
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--grn);
 }
@@ -63,8 +63,16 @@ body {
   font-family: var(--open-sans);
 }
 
+/* Nav BAr */
+
 .navOpen {
   display: flex;
+}
+
+/* Active state for nav items */
+#nav-bar ul li.active a,
+#mobileNav ul li.active a {
+  color: var(--primary);
 }
 
 /* Blog active class */

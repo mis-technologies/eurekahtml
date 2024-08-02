@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function initializeNavBar() {
     const openMenu = document.getElementById("openMenu");
     const navBar = document.getElementById("mobileNav");
-    const navLinks = document.querySelectorAll("#mobileNav a");
+    const navLinks = document.querySelectorAll(
+      "#nav-bar ul li a, #mobileNav ul li a"
+    );
 
     if (openMenu && navBar) {
       openMenu.addEventListener("click", () => {
@@ -39,8 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Scroll to Top Function
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  function initializeScrollToTop() {
+    const readBtn = document.querySelectorAll(".readArticle");
+
+    readBtn.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
   }
 
   // Form Validation
@@ -196,9 +204,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Text Animation
   function initializeTextAnimation() {
-    const textContainer = document.getElementById("text-container");
+    const textContainers = [
+      document.getElementById("text-container"),
+      document.getElementById("text-container2"),
+    ];
 
-    if (textContainer) {
+    if (textContainers[0] || textContainers[1]) {
       const texts = [
         { text: "an Advocate", colorClass: "color1" },
         { text: "a Spokesman", colorClass: "color2" },
@@ -208,51 +219,28 @@ document.addEventListener("DOMContentLoaded", () => {
       let forwardFlip = true;
 
       setInterval(() => {
-        textContainer.classList.add(
-          forwardFlip ? "flip-forward" : "flip-backward"
-        );
+        textContainers.forEach((textContainer) => {
+          if (textContainer) {
+            textContainer.classList.add(
+              forwardFlip ? "flip-forward" : "flip-backward"
+            );
 
-        setTimeout(() => {
-          currentIndex = (currentIndex + 1) % texts.length;
-          textContainer.textContent = texts[currentIndex].text;
-          textContainer.classList.remove(
-            "color1",
-            "color2",
-            "color3",
-            "color4"
-          );
-          textContainer.classList.add(texts[currentIndex].colorClass);
+            setTimeout(() => {
+              currentIndex = (currentIndex + 1) % texts.length;
+              textContainer.textContent = texts[currentIndex].text;
+              textContainer.classList.remove("color1", "color2", "color3");
+              textContainer.classList.add(texts[currentIndex].colorClass);
 
-          if (currentIndex === texts.length - 1) {
-            forwardFlip = !forwardFlip;
+              if (currentIndex === texts.length - 1) {
+                forwardFlip = !forwardFlip;
+              }
+
+              textContainer.classList.remove("flip-forward", "flip-backward");
+            }, 400);
           }
-
-          textContainer.classList.remove("flip-forward", "flip-backward");
-        }, 400);
+        });
       }, 3000);
     }
-  }
-
-  // checking registration form
-  function initializeSignUpFumrCheck() {
-    const form = document.getElementById("signUpForm");
-    const next = form.querySelector(`button[type="submit"]`);
-    const inputs = form.querySelectorAll("input");
-
-    // Checking if the inpu is filled or empty
-    const checkForm = () => {
-      let allInputField = true;
-      inputs.forEach((input) => {
-        if (input.value.trim() === "") {
-          allInputField = false;
-        }
-      });
-      // next.disabled = !allInputField
-    };
-
-    inputs.forEach((input) => {
-      input.addEventListener("input", checkForm);
-    });
   }
 
   // Popup Functionality
@@ -361,4 +349,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initializePopUp("faq");
   initializeAccordion();
   initializeEventCards();
+  initializeScrollToTop();
 });

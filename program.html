@@ -31,31 +31,32 @@
   <body>
     <header class="sticky top-0 left-0 z-50 bg-secondary">
       <nav class="flex justify-between items-center py-5 container">
-        <div class="-translate-x-10">
+        <a class="-translate-x-10" href="/">
           <img src="/images/logo.png" alt="Eureka" />
-        </div>
+        </a>
 
         <div
           class="relative hidden md:flex items-center gap-6 justify-between min-w-[75%]"
           id="nav-bar"
         >
           <ul class="flex gap-12 relative items-center">
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#about">About Us</a>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="/">Home</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#events">Event</a>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="#about">About Us</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#program">Programs</a>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="#events">Event</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./contact.html">Contact Us</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./faq.html">FAQ</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary active">
               <a href="./program.html">Blog</a>
             </li>
           </ul>
@@ -74,22 +75,23 @@
           <ul
             class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
           >
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#about">About Us</a>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="/">Home</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#events">Event</a>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="#about">About Us</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#program">Programs</a>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="#events">Event</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./contact.html">Contact Us</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./faq.html">FAQ</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary active">
               <a href="./program.html">Blog</a>
             </li>
           </ul>
@@ -113,7 +115,7 @@
       class="container flex flex-col items-start justify-between py-10 gap-10 lg:flex-row lg:gap-20 lg:items-center"
     >
       <div
-        class="relative w-full p-1 rounded-xl bg-gray-300 max-w-80 focus-within:border-primary border-2"
+        class="relative w-full p-1 rounded-xl bg-gray-300 max-w-80 focus-within:border-primary focus-within:border-2"
       >
         <span class="absolute left-4 top-1/2 -translate-y-1/2">
           <i class="fa-solid fa-magnifying-glass opacity-60"></i>
@@ -127,43 +129,43 @@
         />
       </div>
       <ul
-        class="flex items-start justify-center w-full gap-8 gap-y-5 flex-wrap md:w-10/12 md:gap-10 md:flex-nowrap md:justify-between md:items-center"
+        class="flex items-start justify-start w-full gap-3 overflow-x-scroll md:w-10/12 md:gap-10 md:justify-between md:items-center hide-scrollbar"
       >
         <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary whitespace-nowrap"
           onclick="showSection('trendingNow')"
         >
           Trending Now
         </li>
         <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
           onclick="showSection('technology')"
         >
           Technology
         </li>
         <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
+          onclick="showSection('sports')"
+        >
+          Sports
+        </li>
+        <li
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
+          onclick="showSection('entertainment')"
+        >
+          Entertainment
+        </li>
+        <li
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
           onclick="showSection('marketing')"
         >
           Marketing
         </li>
         <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('trendingNow')"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
+          onclick="showSection('politics')"
         >
-          Trending Now
-        </li>
-        <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('technology')"
-        >
-          Technology
-        </li>
-        <li
-          class="mini-nav cursor-pointer font-semibold capitalize hover:text-primary"
-          onclick="showSection('marketing')"
-        >
-          Marketing
+          Politics
         </li>
       </ul>
     </div>
@@ -174,8 +176,8 @@
     ></div>
     <template id="cardTemplate">
       <div class="card w-full max-w-[350px] space-y-4 text-[15px]">
-        <div class="image-container">
-          <img src="" alt="" />
+        <div class="image-container w-full h-[240px]">
+          <img src="" alt="" class="w-full h-full object-cover" />
         </div>
         <div class="cardContent space-y-3">
           <h4 class="font-bold"></h4>
@@ -183,12 +185,12 @@
           <h6 class="font-bold text-[11px]"></h6>
           <a
             href="#"
-            class="bg-primary rounded-[5px] p-2 font-bold text-white text-[12px] inline-flex items-center justify-between gap-x-2 hover:bg-opacity-85"
+            class="bg-primary rounded-[5px] p-2 font-bold text-white text-[12px] inline-flex items-center justify-between gap-x-2 hover:bg-opacity-85 readArticle"
           >
             <span>Read article </span>
             <span
-              class="border-2 border-white rounded-full inline-flex items-center w-5 h-5"
-              ><i class="fa-solid fa-arrow-right text-xs"></i></span
+              class="border-2 border-white rounded-full inline-flex items-center w-4 h-4"
+              ><i class="fa-solid fa-arrow-right text-[9px]"></i></span
           ></a>
         </div>
       </div>
@@ -199,6 +201,9 @@
         trendingNow,
         technology,
         marketing,
+        entertainment,
+        politics,
+        sports,
       } from "./src/scripts/data.js";
 
       // Function to render card dynamically
@@ -254,6 +259,21 @@
           document
             .querySelector(`.mini-nav[onclick="showSection('marketing')"]`)
             .classList.add("active");
+        } else if (section === "sports") {
+          renderCards(sports);
+          document
+            .querySelector(`.mini-nav[onclick="showSection('sports')"]`)
+            .classList.add("active");
+        } else if (section === "politics") {
+          renderCards(politics);
+          document
+            .querySelector(`.mini-nav[onclick="showSection('politics')"]`)
+            .classList.add("active");
+        } else if (section === "entertainment") {
+          renderCards(entertainment);
+          document
+            .querySelector(`.mini-nav[onclick="showSection('entertainment')"]`)
+            .classList.add("active");
         }
       };
 
@@ -263,14 +283,14 @@
       const navigateTo = (card) => {
         const contentDiv = document.getElementById("programContent");
         contentDiv.innerHTML = `
-            <div class="container flex flex-col items-center gap-8 w-full max-w-[1024px] mx-auto">
-      <h1 class="font-bold text-3xl uppercase">${card.title}</h1>
-      <img src="${card.image}" alt="${card.title} class="w-full h-autp md:w-auto md:h-80" />
-      <p class="font-semibold">${card.content}</p>
-      <p class="text-base text-justify">${card.article}</p>
-      <p class="text-base text-justify">${card.article}</p>
-      <p class="font-bold italic">Date: ${card.date}</p>
-  </div>
+          <div class="container flex flex-col items-center gap-8 w-full max-w-[1024px] mx-auto">
+            <h1 class="font-bold text-3xl uppercase">${card.title}</h1>
+            <img src="${card.image}" alt="${card.title} class="w-full h-autp md:w-auto md:h-80" />
+            <p class="font-semibold">${card.content}</p>
+            <p class="text-base text-justify">${card.article}</p>
+            <p class="text-base text-justify">${card.article}</p>
+            <p class="font-bold italic">Date: ${card.date}</p>
+          </div>
             `;
 
         // Displaying the param but not working active now
