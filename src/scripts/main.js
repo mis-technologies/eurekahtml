@@ -211,9 +211,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (textContainers[0] || textContainers[1]) {
       const texts = [
-        { text: "an Advocate", colorClass: "color1" },
-        { text: "a Spokesman", colorClass: "color2" },
-        { text: "a Patron", colorClass: "color3" },
+        { text: "an Advocate.", colorClass: "color1" },
+        { text: "a Spokesman.", colorClass: "color2" },
+        { text: "a Patron.", colorClass: "color3" },
       ];
       let currentIndex = 0;
       let forwardFlip = true;
