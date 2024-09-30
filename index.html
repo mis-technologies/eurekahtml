@@ -31,52 +31,72 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <header class="sticky top-0 left-0 z-50 bg-secondary">
+  <body class="transition-all duration-150 dark:bg-dark">
+    <header class="sticky top-0 left-0 z-50 bg-secondary dark:bg-dark">
       <nav class="flex justify-between items-center py-5 container">
-        <a class="-translate-x-10" href="/">
-          <img src="/images/logo.png" alt="Eureka" />
+        <a class="translate-y-1" href="/">
+          <img src="/images/logo.png" alt="Eureka" class="eurekaLogo scale-150 translate-x-5 md:scale-100 md:translate-x-0" />
         </a>
 
         <div
-          class="relative hidden md:flex items-center gap-6 justify-between min-w-[75%]"
+          class="relative flex items-center min-w-[75%] justify-between gap-20"
           id="nav-bar"
         >
-          <ul class="flex gap-12 relative items-center">
+        <!-- Nav Items -->
+          <ul class="gap-3 relative items-center text-black dark:text-white hidden md:flex justify-between lg:gap-12">
             <li class="font-sans font-bold hover:text-primary active">
               <a href="/">Home</a>
             </li>
             <li class="font-sans font-bold hover:text-primary">
-              <a href="#about">About Us</a>
-            </li>
-            <li class="font-sans font-bold hover:text-primary">
               <a href="#events">Event</a>
-            </li>
-            
+            </li>            
             <li class="font-sans font-bold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
+              <a href="./program.html">Blog</a>
             </li>
             <li class="font-sans font-bold hover:text-primary">
               <a href="./faq.html">FAQ</a>
             </li>
             <li class="font-sans font-bold hover:text-primary">
-              <a href="./program.html">Blog</a>
+              <a href="./contact.html">Contact Us</a>
             </li>
-          </ul>
+          </ul> 
+
+           <!-- Toggle Switch formerly here-->
+          
           <button
-            class="hidden md:block bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
+            class="hidden md:block bg-primary p-3 lg:px-4 xl:px-6 max-w-28 xl:max-w-none rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
           >
             <a href="register.html"> Become an Advocate </a>
           </button>
         </div>
 
+         <!-- Toggle Switch -->
+         <label class="flex items-center cursor-pointer absolute right-[20%] md:right-[25%] xl:right-[30%]">
+          <div class="relative">
+              <input id="theme-toggle" type="checkbox" class="sr-only" />
+              <!-- Switch Background -->
+              <div class="block bg-black w-[70px] h-9 rounded-full dark:bg-blue-200 transition-all duration-150"></div>
+              <!-- Switch Icon -->
+              <div class="switchIcon absolute right-1 top-1 rounded-full transition-transform h-7 w-7">
+                <div id="lightIcon" class="relative">
+                  <img src="/images/icons/Toggle.png" alt="">
+                  <img src="/images/icons/clouds.png" alt="" class="absolute scale-75 -right-2 top-1/2 -translate-y-1/2">
+                </div>
+                <div id="darkIcon" class="bg-white w-full h-full rounded-full hidden">
+                  <div class="bg-dark w-full h-full rounded-full -translate-x-2">
+                  </div>
+                </div>
+              </div>
+          </div>
+         </label>
+
         <!-- Mobile Nav Bar -->
         <div
-          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary md:hidden"
+          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary dark:bg-dark md:hidden"
           id="mobileNav"
         >
           <ul
-            class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
+            class="flex flex-col gap-12 md:relative md:flex-row md:items-center text-black dark:text-white"
           >
           <li class="font-sans font-bold hover:text-primary active">
             <a href="/">Home</a>
@@ -105,7 +125,7 @@
           </button>
         </div>
 
-        <div class="block md:hidden">
+        <div class="block md:hidden text-black dark:text-white">
           <span class="material-symbols-outlined" id="openMenu">
             &#xe5d2;
           </span>
@@ -114,9 +134,10 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="bg-secondary relative">
+    <section id="hero" class="relative overflow-hidden">
+      <div class="morphism z-10 bg-secondary dark:bg-dark dark:text-white py-10 pb-16">
       <div
-        class="container flex flex-col md:flex-row justify-between h-full md:max-h-[38rem] py-10 gap-4 pb-16"
+        class="container flex flex-col md:flex-row justify-between h-full md:max-h-[37rem] gap-8"
       >
         <!-- Hero Content -->
         <div
@@ -147,94 +168,85 @@
           </div>
         </div>
 
-        <!-- Hero Images -->
-        <div class="w-full md:w-1/2 relative inline-flex justify-center z-10 lg:justify-end md:pr-3">
-          <div
-            class="relative grid grid-cols-[repeat(2,2fr)] my-10 md:my-0 md:grid-cols-[repeat(2,1fr)] lg:grid-cols-[repeat(2, 250px)] w-fit gap-3"
-          >
-            <div
-              class="h-44 md:h-52 relative p-2 bg-white translate-y-4 rounded-tl-[70px]"
-            >
-              <img
-                src="/images/young-man-working-from-home BW 1.png"
-                alt=""
-                class="h-full w-full bg-accent rounded-tl-[70px] bg-opacity-60"
-              />
-              <!-- <div class="absolute icurve2 -top-12 -left-10 md:-left-14">
-                <img
-                  src="/images/designs/yellow-arrows-x8AhtWqjfw.png"
-                  alt=""
-                />
-              </div> -->
+     <!-- Hero Images -->
+      <div class="w-full md:w-1/2 relative flex justify-between z-10 lg:justify-end gap-3">
+      <!--first col  -->
+        <div class="w-[170px] flex flex-col items-center gap-2">    
+          <div class="bg-[#3B88FFCC] bg-opacity-80 w-full h-[226px] overflow-hidden rounded-[120px] flex items-center justify-center">
+            <img src="./images/hero/model6.png" alt="" class="object-cover w-full h-full scale-90 translate-y-5">
+          </div>
+          <div class="bg-[#00E25ACC] bg-opacity-80 w-full h-[192.67px] overflow-hidden rounded-[50px] flex items-center justify-center">
+              <img src="./images/hero/model3.png" alt="" class="object-cover w-full h-full translate-y-2">
+           </div>
+           <div class="bg-[#BB86FC] w-full h-[170px] overflow-hidden rounded-full flex items-center justify-center">
+            <img src="./images/hero/model5.png" alt="" class="object-cover w-full h-full scale-90 translate-y-5">
+          </div>
+          </div>
+          <!--second col  -->
+          <div class="w-[170px] flex flex-col items-center gap-6">      
+            <div class="bg-[#F77947] w-full h-[226.67px] overflow-hidden rounded-[2rem] rounded-br-[40%] flex items-center justify-center">
+              <img src="./images/hero/model4.png" alt="" class="object-cover w-full h-full">
             </div>
-            <div class="h-44 md:h-52 relative p-2 bg-white">
-              <img
-                src="/images/smiling-showing-hello-gesture-holding-folder-young-africanamerican-guy-isolated-blue-background BW 1.png"
-                alt=""
-                class="h-full w-full bg-primary bg-opacity-80"
-              />
+            <div class="bg-[#FCAF00] w-full h-[170px] overflow-hidden rounded-full flex items-center justify-center">
+              <img src="./images/hero/model2.png" alt="" class="object-cover w-full h-full">
             </div>
-            <div
-              class="h-44 md:h-52 overflow-hidden relative p-2 bg-white translate-y-4 rounded-bl-[70px]"
-            >
-              <img
-                src="/images/positive-hipster-girl.png"
-                alt=""
-                class="h-full w-full bg-lightPurple rounded-bl-[70px] bg-opacity-60"
-              />
-            </div>
-            <div class="h-44 md:h-52 relative p-2 bg-white rounded-br-[70px]">
-              <img
-                src="/images/medium-shot-smiley-man-work BW 1.png"
-                alt=""
-                class="h-full w-full bg-[#DFD8D7] rounded-br-[70px]"
-              />
-              <div class="absolute -right-2 top-[40%] w-8 h-8">
-                <img src="/images/designs/x.png" alt="" class="h-full w-full" />
+            <div class="bg-[#3B88FF] w-full h-[170px] overflow-hidden rounded-full rounded-br-none flex items-center justify-center">
+              <img src="./images/hero/model8.png" alt="" class="object-cover w-full h-auto scale-80">
+            </div>             
+          </div>
+          <!-- third col -->
+          <div class="w-[170px] flex flex-col items-center gap-2">
+            <div class="w-full h-1/3 relative rounded-l-full flex items-center justify-end overlapped">
+              <div class="h-full w-full overflow-hidden rounded-l-full flex">
+                <img src="./images/hero/model1.png" alt="" class="object-cover w-full h-full">
               </div>
             </div>
-            <div
-              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-75 md:-left-0 md:top-[85%] "
-            >
-              <img src="/images/designs/Frame1.png" alt="" />
+            <div class="bg-[#F8BAD1] w-full h-2/3 overflow-hidden rounded-full flex items-center justify-center">
+              <img src="./images/hero/model1.png" alt="" class="object-cover w-full h-full scale-95 translate-y-5">
             </div>
-          </div>
-        </div>
-
-        <!-- Join botton for mobile -->
-        <div
-          class="flex flex-col items-center justify-center gap-4 md:hidden z-10"
-        >
-          <button
-            class="bg-primary px-10 py-4 font-semibold text-lg text-white rounded-[2rem] cursor-pointer hover:opacity-80 hover:scale-105"
-          >
-            Join the community
-          </button>
-          <div class="flex flex-col items-center justify-center">
-            <p class="font-bold font-sans text-lg">It’s absolutely free.</p>
-            <img src="/images/designs/Vector6.png" alt="" />
-          </div>
-        </div>
+          </div>         
       </div>
+
+       <!-- Join botton for mobile -->
+       <div
+       class="flex flex-col items-center justify-center gap-4 md:hidden z-10"
+     >
+       <button
+         class="bg-primary px-10 py-4 font-semibold text-lg text-white rounded-[2rem] cursor-pointer hover:opacity-80 hover:scale-105"
+       >
+         Join the community
+       </button>
+       <div class="flex flex-col items-center justify-center">
+         <p class="font-bold font-sans text-lg">It’s absolutely free.</p>
+         <img src="/images/designs/Vector6.png" alt="" />
+       </div>
+     </div>
+      
+    </div>
+    </div>
 
       <!-- Hero Icons -->
-      <div class="absolute bottom-0 left-0">
-        <img src="/images/designs/Vector (3).png" alt="" />
-      </div>
-      <div class="hidden md:block absolute top-20 left-0">
+      <div class="hidden md:block absolute top-28 -left-1">
         <img src="/images/designs/hero_blue_arrow.png" alt="" />
-      </div>
-      <div class="absolute top-0 right-0 overflow-hidden">
-        <img src="/images/designs/Vector5.png" alt="" />
-        <div class="mask1"></div>
-      </div>
-      <div class="hidden md:block absolute bottom-0 right-[15%]">
-        <img src="/images/designs/hero_ellipse.png" alt="" />
-      </div>
+      </div>    
+       
+      <div class="absolute top-0 left-0 h-full bg-slate-0 w-full -z-10">
+        <div class="particle-container h-full w-full ">
+          <div class="particle">
+            <img src="./images/particle1.png" alt="">
+          </div>
+          <div class="particle">
+            <img src="./images/particle2.png" alt="">
+          </div>
+          <div class="particle">
+            <img src="./images/particle3.png" alt="">
+          </div>         
+      </div> 
+      </div> 
     </section>
 
     <!--Partners  -->
-    <section class="container flex flex-col py-16 gap-12">    
+    <section class="container flex flex-col py-16 gap-12 dark:text-white">    
     <div
       class="flex flex-col items-center justify-between md:flex-row gap-y-10"
     >
@@ -247,28 +259,28 @@
             src="/images/partners/Black and White Collection 0.png"
             alt="lorem"
           />
-          <h5 class="font-bold">LogoIpsum</h5>
+          <h5 class="font-bold ml-1 italic font-lato">LogoIpsum</h5>
         </div>
         <div class="flex items-center justify-between">
           <img
             src="/images/partners/Black and White Collection 1.png"
             alt="lorem"
           />
-          <h5 class="font-bold">LogoIpsum</h5>
+          <h5 class="font-bold ml-1 italic font-lato">LogoIpsum</h5>
         </div>
         <div class="flex items-center justify-between">
           <img
             src="/images/partners/Black and White Collection 2.png"
             alt="lorem"
           />
-          <h5 class="font-bold">LogoIpsum</h5>
+          <h5 class="font-bold ml-1 italic font-lato">LogoIpsum</h5>
         </div>
         <div class="flex items-center justify-between">
           <img
             src="/images/partners/Black and White Collection 3.png"
             alt="lorem"
           />
-          <h5 class="font-bold">LogoIpsum</h5>
+          <h5 class="font-bold ml-1 italic font-lato">LogoIpsum</h5>
         </div>
       </div>
     </div>
@@ -278,7 +290,7 @@
     <!-- About Section -->
     <section id="about" class="relative overflow-hidden">
       <div
-        class="container flex flex-col justify-between items-center gap-10 md:flex-row pt-20"
+        class="container flex flex-col justify-between items-center gap-10 md:flex-row pt-20 dark:text-white"
       >
         <div class="relative w-full md:w-1/2 z-10">
           <img
@@ -340,14 +352,14 @@
               Join the community
             </button>
             <div class="flex flex-col items-center justify-center">
-              <img src="/images/designs/Vector6.png" alt="" />
-            </div>
+              <img src="/images/designs/Vector6.png" alt=""/>
+            </dv>
           </div>
         </div>
       </div>
-      <div class="absolute top-24 left-0 hidden md:block">
+      <!-- <div class="absolute top-24 left-0 hidden md:block">
         <img src="/images/designs/who_we_are_i_l.png" alt="" />
-      </div>
+      </div> -->
       <div class="absolute top-0 left-1/2 rotate-45 -translate-y-8 translate-x-2">
         <img src="/images/designs/purple_top_i.png" alt="" />
       </div>
@@ -364,45 +376,49 @@
     </section>
 
     <!-- Socials -->
-    <div class="container flex justify-center py-20 gap-12 flex-wrap">
+    <div class="container flex justify-center py-20 gap-12 flex-wrap dark:text-white">
       <div
         class="flex items-center gap-4 pr-4 border-[rgba(0,0,0,0.4)] md:border-r-2"
+        id="fbI"
       >
-        <img src="/images/socials/mingcute_facebook-line.png" alt="" />
+        <img src="/images/socials/mingcute_facebook-line_d.png" alt="" />
         <div class="count">
           <h1 class="font-semibold text-2xl md:text-[36px]">5K+</h1>
           <p class="font-semibold opacity-50 text-[15px]">followers</p>
         </div>
       </div>
       <div
-        class="flex items-center gap-4 pr-4 border-[rgba(0,0,0,0.4)] md:border-r-2"
+        class="flex items-center gap-4 pr-4 border-[rgba(0,0,0,0.4)] md:border-r-2 dark:border-[rgba(255,255,255,0.4)]"
+        id="tgI"
       >
-        <img src="/images/socials/Vector.png" alt="" />
+        <img src="/images/socials/telegram_d.png" alt="" />
         <div class="count">
           <h1 class="font-semibold text-2xl md:text-[36px]">2K+</h1>
           <p class="font-semibold opacity-50 text-[15px]">followers</p>
         </div>
       </div>
       <div
-        class="flex items-center gap-4 pr-4 border-[rgba(0,0,0,0.4)] md:border-r-2"
+        class="flex items-center gap-4 pr-4 border-[rgba(0,0,0,0.4)] md:border-r-2 dark:border-[rgba(255,255,255,0.4)]"
+        id="waI"
       >
-        <img src="/images/socials/Vector (1).png" alt="" />
+        <img src="/images/socials/ic_baseline-whatsapp_d.png" alt="" />
         <div class="count">
           <h1 class="font-semibold text-2xl md:text-[36px]">1M+</h1>
           <p class="font-semibold opacity-50 text-[15px]">subscribers</p>
         </div>
       </div>
       <div
-        class="flex items-center gap-4 pr-4 border-[rgba(0,0,0,0.4)] md:border-r-2"
+        class="flex items-center gap-4 pr-4 border-[rgba(0,0,0,0.4)] md:border-r-2 dark:border-[rgba(255,255,255,0.4)]"
+        id="inI"
       >
-        <img src="/images/socials/Vector (2).png" alt="" />
+        <img src="/images/socials/mdi_instagram_d.png" alt="" />
         <div class="count">
           <h1 class="font-semibold text-2xl md:text-[36px]">1K+</h1>
           <p class="font-semibold opacity-50 text-[15px]">followers</p>
         </div>
       </div>
-      <div class="flex items-center gap-4 pr-4">
-        <img src="/images/socials/Vector (1).png" alt="" />
+      <div class="flex items-center gap-4 pr-4" id="twI">
+        <img src="/images/socials/mingcute_twitter-line_d.png" alt="" />
         <div class="count">
           <h1 class="font-semibold text-2xl md:text-[36px]">3K+</h1>
           <p class="font-semibold opacity-50 text-[15px]">subscribers</p>
@@ -411,7 +427,7 @@
     </div>
 
     <!-- Programs -->
-    <section id="program" class="bg-secondary py-16 relative">
+    <section id="program" class="bg-secondary py-16 relative dark:bg-dark dark:text-white">
       <div
         class="container flex flex-col justify-between gap-10 lg:flex-row z-10"
       >
@@ -433,7 +449,7 @@
           class="w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm"
         >
           <div
-            class="flex flex-col items-start p-4 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow"
+            class="flex flex-col items-start p-4 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow dark:bg-dark"
           >
             <img src="/images/icons/clarity_note-line.png" alt="" />
             <h5 class="font-bold text-[16px]">Curriculum Development</h5>
@@ -443,7 +459,7 @@
             </p>
           </div>
           <div
-            class="relative flex flex-col items-start p-4 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow"
+            class="relative flex flex-col items-start p-4 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow dark:bg-dark"
           >
             <img
               src="/images/icons/carbon_license-third-party (1).png"
@@ -459,7 +475,7 @@
             </div>
           </div>
           <div
-            class="flex flex-col items-start p-4 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow"
+            class="flex flex-col items-start p-4 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow dark:bg-dark"
           >
             <img src="/images/icons/la_chalkboard-teacher.png" alt="" />
             <h5 class="font-bold text-[16px]">Student Support & Mentoring</h5>
@@ -469,7 +485,7 @@
             </p>
           </div>
           <div
-            class="flex flex-col items-start p-4 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow"
+            class="flex flex-col items-start p-4 bg-white rounded-2xl gap-4 shadow-primary drop-shadow-lg shadow dark:bg-dark"
           >
             <img src="/images/icons/Vector (3).png" alt="" />
             <h5 class="font-bold text-[16px]">Community Engagement & Advocacy</h5>
@@ -490,10 +506,13 @@
       <div class="absolute top-1/3 left-1/3 scale-75">
         <img src="/images/designs/Vector (1).png" alt="" />
       </div>
+      <div class="absolute top-28 -left-1 hidden md:block">
+        <img src="/images/designs/who_we_are_i_l.png" alt="" />
+      </div>
     </section>
 
     <!-- Founders -->
-     <section id="founders" class="bg-white py-24 relative container md:py-16">
+     <section id="founders" class="bg-white py-24 relative container md:py-16 dark:bg-dark dark:text-white">
       <h1 class="font-bold text-3xl text-center mb-10 md:mb-16">
         The Brains Behind Eureka.
       </h1>
@@ -537,7 +556,8 @@
 
     
     <!-- Download Section -->
-    <section id="download" class="bg-secondary py-20 relative">
+    <section id="download" class="relative">
+      <div class="morphism bg-secondary py-20 relative dark:bg-dark dark:text-white">
       <div class="container w-full text-center relative flex flex-col items-center">
         <h1 class="font-bold text-3xl">Download Eureka App Now!</h1>
         <p class="opacity-50 mt-5">
@@ -568,13 +588,27 @@
       <div class="absolute bottom-0 right-0 hidden md:block">        
         <img src="./images/designs/elipse.png" alt="">
       </div>
+      </div>
+
+      <div class="absolute top-0 left-0 h-full bg-slate-0 w-full -z-10">
+        <div class="particle-container h-full w-full ">
+          <div class="particle">
+            <img src="./images/particle1.png" alt="">
+          </div>
+          <div class="particle">
+            <img src="./images/particle2.png" alt="">
+          </div>
+          <div class="particle">
+            <img src="./images/particle3.png" alt="">
+          </div>         
+      </div> 
+      </div> 
      </section>
 
     <!-- Events -->
     <section id="events" class="py-10 container">
       <div
-        class="container-box flex flex-col justify-between items-start gap-10 lg:flex-row"
-      >
+        class="container-box flex flex-col justify-between items-start gap-10 lg:flex-row dark:text-white">      
         <div class="w-full md:w-1/2 md:max-w-80 flex flex-col gap-4 mt-0 md:mt-20">
           <h2 class="script-font">Engagement</h2>
           <h1 class="text-2xl font-bold">Our Events</h1>
@@ -664,7 +698,8 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-secondary py-16 relative">
+    <footer class="bg-secondary relative dark:bg-dark dark:text-white" >
+      <div class="morphism z-10 bg-secondary py-20 relative dark:bg-dark dark:text-white ">
       <div
         class="container w-full flex flex-col items-center mx-auto md:max-w-2xl gap-7 text-center z-[3]"
       >
@@ -696,30 +731,38 @@
           </div>
         </div>
       </div>
-      <!-- <div class="hidden md:block absolute top-1/3 left-1/3 scale-90">
-        <img src="/images/designs/x.png" alt="" />
-      </div> -->
+      <!-- Footer Icons -->
       <div class="absolute top-1/2 left-10 md:top-1/4 md:left-[15%]">
         <img src="/images/designs/Frame2.png" alt="" />
       </div>
-      <!-- <div class="absolute bottom-5 md:bottom-20 right-0">
-        <img src="/images/designs/Frame3.png" alt="" />
-        <div class="mask1"></div>
-      </div> -->
-      <!-- <div class="absolute bottom-0 left-0">
-        <img src="/images/designs/Vector9.png" alt="" />
-      </div> -->
-      <!-- <div class="absolute top-3 left-3 scale-50 -rotate-90 hidden md:block">
-        <img src="/images/designs/footer-icon1.gif" alt="" />
-      </div> -->
       <div class="hidden md:block absolute right-32 top-1/3 scale-75">
         <img src="/images/designs/footer-icon2.png" alt="" />
       </div>
+
+    </div>
+    <div class="absolute top-0 left-0 h-full bg-slate-0 w-full ">
+      <div class="particle-container h-full w-full ">
+        <div class="particle">
+          <img src="./images/particle1.png" alt="">
+        </div>
+        <div class="particle">
+          <img src="./images/particle2.png" alt="">
+        </div>
+        <div class="particle">
+          <img src="./images/particle3.png" alt="">
+        </div>         
+    </div> 
+      <!-- <div class="particle-container h-full w-full">
+        <li class="particle bg-[#070d5a] bg-opacity-50 w-48 h-48 rounded-full list-none"></li>
+        <li class="particle bg-[#070d5a] bg-opacity-50 w-52 h-52 rounded-full list-none"></li>
+        <li class="particle bg-[#070d5a] bg-opacity-50 w-64 h-64 rounded-full list-none"></li>
+    </div>  -->
+    </div> 
     </footer>
 
     <!-- Footer Socials -->
-     <div class="container flex flex-col items-center justify-between py-7 md:flex-row gap-y-10">
-      <img src="./images/logo.png" alt="" class="md:-translate-x-5">
+     <div class="container flex flex-col items-center justify-between py-7 md:flex-row gap-y-10 dark:text-white">
+      <img src="./images/logo.png" alt="" class="eurekaLogo md:-translate-x-5 eurekaLogo">
       <p class="opacity-50 text-sm text-center">&copy; 2024 Eureka. All rights reveserved. For inquries. contact: info@eureka.com</p>
       <div class="flex items-center gap-6">
         <a
@@ -747,3 +790,35 @@
 
   </body>
 </html>
+
+
+
+
+ <!-- <div class="relative grid grid-cols-3 w-[90%] h-full gap-1 gap-x-5">
+    <div class="bg-[#3B88FFCC] bg-opacity-80 w-full h-full overflow-hidden rounded-[120px] flex items-center justify-center">
+      <img src="./images/hero/model6.png" alt="" class="object-cover w-full h-full">
+    </div>
+    <div class="bg-[#F77947] w-full h-full overflow-hidden rounded-[2rem] rounded-br-[40%] flex items-center justify-center">
+      <img src="./images/hero/model4.png" alt="" class="object-cover w-full h-full">
+    </div>
+    <div class="bg-[#FCAF00] w-full h-full relative rounded-l-full flex items-center justify-center overlapped">
+      <div class="containIt h-full w-full overflow-hidden rounded-l-full flex relative">
+        <img src="./images/hero/model7.png" alt="" class="object-cover w-full h-full absolute translate-x-52 bg-slate-100">
+      </div>
+    </div>
+    <div class="bg-[#00E25ACC] bg-opacity-80 w-full h-full overflow-hidden rounded-[50px] flex items-center justify-center">
+    <img src="./images/hero/model3.png" alt="" class="object-cover w-full h-full">
+    </div>
+    <div class="bg-[#FCAF00] w-full h-full overflow-hidden rounded-full flex items-center justify-center">
+      <img src="./images/hero/model2.png" alt="" class="object-cover w-full h-full">
+    </div>
+    <div class="bg-[#F8BAD1] w-full h-full overflow-hidden rounded-full flex items-center justify-center row-span-2">
+      <img src="./images/hero/model1.png" alt="" class="object-cover w-full h-full">
+    </div>
+    <div class="bg-[#BB86FC] w-full h-full overflow-hidden rounded-full flex items-center justify-center">
+      <img src="./images/hero/model5.png" alt="" class="object-cover w-full h-full scale-">
+    </div>
+    <div class="bg-[#3B88FF] w-full h-full overflow-hidden rounded-full  rounded-br-none flex items-center justify-center ">
+      <img src="./images/hero/model8.png" alt="" class="object-contain w-full h-full">
+    </div>
+  </div> -->

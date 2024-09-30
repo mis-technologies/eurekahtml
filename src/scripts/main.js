@@ -164,26 +164,19 @@ document.addEventListener("DOMContentLoaded", () => {
       // Transition to second form on clicking continueButton
       const transitioned = () => {
         if (!continueButton.disabled) {
-          formContainer.classList.add("transitioning", "move-right");
-          imageContainer.classList.add("transitioning", "move-left");
+          firstForm.classList.add("hidden");
+          secondForm.classList.remove("hidden");
+          secondForm.classList.add("fade-in");
 
-          formContainer.addEventListener(
-            "transitionend",
-            (event) => {
-              if (event.target === formContainer) {
-                formContainer.classList.remove("transitioning", "move-right");
-                imageContainer.classList.remove("transitioning", "move-left");
+          // Update dots to reflect the current form
+          dot1.classList.remove("active");
+          dot2.classList.add("active");
 
-                formContainer.classList.add("new-position-form");
-                imageContainer.classList.add("new-position-image");
-
-                firstForm.classList.add("hidden");
-                secondForm.classList.remove("hidden");
-
-                // Update dots to reflect the current form
-                dot1.classList.remove("active");
-                dot2.classList.add("active");
-              }
+          // Remove the fade-in class after animation completes
+          secondForm.addEventListener(
+            "animationend",
+            () => {
+              secondForm.classList.remove("fade-in");
             },
             { once: true }
           );
@@ -341,13 +334,126 @@ document.addEventListener("DOMContentLoaded", () => {
     handleResize(); // Call once to set initial state
   }
 
-  // Initialize Components
+  // Toggle DarkMode
+  function initializeDarkMode() {
+    const themeToggle = document.getElementById("theme-toggle");
+    const htmlElement = document.documentElement;
+    const logos = document.querySelectorAll(".eurekaLogo");
+    const dot = document.querySelector(".switchIcon");
+    const lightIcon = document.getElementById("lightIcon");
+    const darkIcon = document.getElementById("darkIcon");
+    // const fbI = document.getElementById("fbI");
+    // const waI = document.getElementById("waI");
+    // const twI = document.getElementById("twI");
+    // const tgI = document.getElementById("tgI");
+    // const inI = document.getElementById("inI");
+
+    // Load the user's preference from localStorage
+    if (localStorage.getItem("darkMode") === "enabled") {
+      htmlElement.classList.add("dark");
+      themeToggle.checked = true;
+      // logo.src = "/images/white_logo.png";
+      dot.style.transform = "translateX(-120%)";
+      lightIcon.style.display = "block";
+      darkIcon.style.display = "none";
+      logos.forEach((logo) => (logo.src = "/images/white_logo.png"));
+      // fbI.src = "/images/socials/mingcute_facebook-line_d.png";
+      // waI.src = "/images/socials/ic_baseline-whatsapp_d.png";
+      // twI.src = "/images/socials/mingcute_twitter-line_d.png";
+      // tgI.src = "/images/socials/telegram_d.png";
+      // inI.src = "/images/socials/mdi_instagram_d.png";
+    } else {
+      htmlElement.classList.remove("dark");
+      themeToggle.checked = false;
+      // logo.src = "/images/logo.png";
+      logos.forEach((logo) => (logo.src = "/images/logo.png"));
+      dot.style.transform = "translateX(0)";
+      lightIcon.style.display = "none";
+      darkIcon.style.display = "block";
+
+      // fbI.src = "/images/socials/mingcute_facebook-line.png";
+      // waI.src = "/images/socials/ic_baseline-whatsapp.png";
+      // twI.src = "/images/socials/mingcute_twitter-line.png";
+      // tgI.src = "/images/socials/telegram.png";
+      // inI.src = "/images/socials/mdi_instagram.png";
+    }
+
+    // Toggle the theme
+    themeToggle.addEventListener("change", () => {
+      if (themeToggle.checked) {
+        htmlElement.classList.add("dark");
+        localStorage.setItem("darkMode", "enabled");
+        // logo.src = "/images/white_logo.png";
+        logos.forEach((logo) => (logo.src = "/images/white_logo.png"));
+        dot.style.transform = "translateX(-120%)";
+        lightIcon.style.display = "block";
+        darkIcon.style.display = "none";
+      } else {
+        htmlElement.classList.remove("dark");
+        localStorage.setItem("darkMode", "disabled");
+        // logo.src = "/images/logo.png";
+        logos.forEach((logo) => (logo.src = "/images/logo.png"));
+        dot.style.transform = "translateX(0)";
+        lightIcon.style.display = "none";
+        darkIcon.style.display = "block";
+      }
+    });
+  }
+
+  function initializeBgParticleMovement() {
+    const particles = document.querySelectorAll(".particle");
+    const container = document.querySelector(".particle-container");
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+
+    particles.forEach((particle) => {
+      // Initialize position and velocity
+      particle.style.left = `${
+        Math.random() * (containerWidth - particle.clientWidth)
+      }px`;
+      particle.style.top = `${
+        Math.random() * (containerHeight - particle.clientHeight)
+      }px`;
+      particle.velocityX = (Math.random() - 0.1) * 3;
+      particle.velocityY = (Math.random() - 0.1) * 3;
+    });
+
+    function animate() {
+      particles.forEach((particle) => {
+        let x = parseFloat(particle.style.left);
+        let y = parseFloat(particle.style.top);
+
+        x += particle.velocityX;
+        y += particle.velocityY;
+
+        // Bounce off walls
+        if (x <= 0 || x >= containerWidth - particle.clientWidth) {
+          particle.velocityX *= -1;
+        }
+        if (y <= 0 || y >= containerHeight - particle.clientHeight) {
+          particle.velocityY *= -1;
+        }
+
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+
+  // Initialize functions
   initializeNavBar();
   initializeRegistrationPage();
   initializeTextAnimation();
   initializePopUp("contactForm");
   initializePopUp("faq");
+  initializePopUp("signInForm");
   initializeAccordion();
   initializeEventCards();
   initializeScrollToTop();
+  initializeDarkMode();
+  initializeBgParticleMovement();
 });

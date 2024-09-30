@@ -28,70 +28,108 @@
     ></script>
   </head>
 
-  <body>
-    <header class="sticky top-0 left-0 z-50 bg-secondary">
+  <body class="dark:bg-dark dark:text-white">
+    <header class="sticky top-0 left-0 z-50 bg-secondary dark:bg-dark">
       <nav class="flex justify-between items-center py-5 container">
-        <a class="-translate-x-10" href="/">
-          <img src="/images/logo.png" alt="Eureka" />
+        <a class="translate-y-1" href="/">
+          <img
+            src="/images/logo.png"
+            alt="Eureka"
+            class="eurekaLogo scale-150 translate-x-5 md:scale-100 md:translate-x-0"
+          />
         </a>
 
         <div
-          class="relative hidden md:flex items-center gap-6 justify-between min-w-[75%]"
+          class="relative flex items-center min-w-[75%] justify-between gap-20"
           id="nav-bar"
         >
-          <ul class="flex gap-12 relative items-center">
+          <!-- Nav Items -->
+          <ul
+            class="gap-3 relative items-center text-black dark:text-white hidden md:flex justify-between lg:gap-12"
+          >
             <li class="font-sans font-bold hover:text-primary">
               <a href="/">Home</a>
             </li>
             <li class="font-sans font-bold hover:text-primary">
-              <a href="#about">About Us</a>
-            </li>
-            <li class="font-sans font-bold hover:text-primary">
-              <a href="#events">Event</a>
-            </li>
-
-            <li class="font-sans font-bold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
-            </li>
-            <li class="font-sans font-bold hover:text-primary">
-              <a href="./faq.html">FAQ</a>
+              <a href="/#events">Event</a>
             </li>
             <li class="font-sans font-bold hover:text-primary active">
               <a href="./program.html">Blog</a>
             </li>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="./faq.html">FAQ</a>
+            </li>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="./contact.html">Contact Us</a>
+            </li>
           </ul>
+
+          <!-- Toggle Switch formerly here-->
+
           <button
-            class="hidden md:block bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
+            class="hidden md:block bg-primary p-3 lg:px-4 xl:px-6 max-w-28 xl:max-w-none rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
           >
             <a href="register.html"> Become an Advocate </a>
           </button>
         </div>
 
+        <!-- Toggle Switch -->
+        <label
+          class="flex items-center cursor-pointer absolute right-[20%] md:right-[25%] xl:right-[30%]"
+        >
+          <div class="relative">
+            <input id="theme-toggle" type="checkbox" class="sr-only" />
+            <!-- Switch Background -->
+            <div
+              class="block bg-black w-[70px] h-9 rounded-full dark:bg-blue-200 transition-all duration-150"
+            ></div>
+            <!-- Switch Icon -->
+            <div
+              class="switchIcon absolute right-1 top-1 rounded-full transition-transform h-7 w-7"
+            >
+              <div id="lightIcon" class="relative">
+                <img src="/images/icons/Toggle.png" alt="" />
+                <img
+                  src="/images/icons/clouds.png"
+                  alt=""
+                  class="absolute scale-75 -right-2 top-1/2 -translate-y-1/2"
+                />
+              </div>
+              <div
+                id="darkIcon"
+                class="bg-white w-full h-full rounded-full hidden"
+              >
+                <div
+                  class="bg-dark w-full h-full rounded-full -translate-x-2"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </label>
+
         <!-- Mobile Nav Bar -->
         <div
-          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary md:hidden"
+          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary dark:bg-dark md:hidden"
           id="mobileNav"
         >
           <ul
-            class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
+            class="flex flex-col gap-12 md:relative md:flex-row md:items-center text-black dark:text-white"
           >
             <li class="font-sans font-bold hover:text-primary">
               <a href="/">Home</a>
             </li>
-            <li class="font-sans font-bold hover:text-primary">
-              <a href="#about">About Us</a>
-            </li>
-            <li class="font-sans font-bold hover:text-primary">
-              <a href="#events">Event</a>
-            </li>
 
             <li class="font-sans font-bold hover:text-primary">
+              <a href="/#events">Event</a>
+            </li>
+
+            <li class="font-sans font-bold hover:text-primary active">
               <a href="./contact.html">Contact Us</a>
             </li>
             <li class="font-sans font-bold hover:text-primary">
               <a href="./faq.html">FAQ</a>
             </li>
-            <li class="font-sans font-bold hover:text-primary active">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./program.html">Blog</a>
             </li>
           </ul>
@@ -102,7 +140,7 @@
           </button>
         </div>
 
-        <div class="block md:hidden">
+        <div class="block md:hidden text-black dark:text-white">
           <span class="material-symbols-outlined" id="openMenu">
             &#xe5d2;
           </span>
@@ -115,7 +153,7 @@
       class="container flex flex-col items-start justify-between py-10 gap-10 lg:flex-row lg:gap-20 lg:items-center"
     >
       <div
-        class="relative w-full p-1 rounded-xl bg-gray-300 max-w-80 focus-within:border-primary focus-within:border-2"
+        class="relative w-full p-1 rounded-xl bg-gray-300 max-w-80 focus-within:border-primary focus-within:border-2 dark:text-dark"
       >
         <span class="absolute left-4 top-1/2 -translate-y-1/2">
           <i class="fa-solid fa-magnifying-glass opacity-60"></i>
@@ -132,37 +170,37 @@
         class="flex items-start justify-start w-full gap-3 overflow-x-scroll md:w-10/12 md:gap-10 md:justify-between md:items-center hide-scrollbar"
       >
         <li
-          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary whitespace-nowrap"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary opacity-80 whitespace-nowrap"
           onclick="showSection('trendingNow')"
         >
           Trending Now
         </li>
         <li
-          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary opacity-80"
           onclick="showSection('technology')"
         >
           Technology
         </li>
         <li
-          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary opacity-80"
           onclick="showSection('sports')"
         >
           Sports
         </li>
         <li
-          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary opacity-80"
           onclick="showSection('entertainment')"
         >
           Entertainment
         </li>
         <li
-          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary opacity-80"
           onclick="showSection('marketing')"
         >
           Marketing
         </li>
         <li
-          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary"
+          class="mini-nav cursor-pointer font-bold capitalize hover:text-primary opacity-80"
           onclick="showSection('politics')"
         >
           Politics
@@ -172,7 +210,7 @@
 
     <div
       id="programContent"
-      class="container flex flex-wrap gap-8 items-center justify-between mb-8"
+      class="container flex flex-wrap gap-8 items-center justify-between mb-8 md:items-start"
     ></div>
     <template id="cardTemplate">
       <div class="card w-full max-w-[350px] space-y-4 text-[15px]">
