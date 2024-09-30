@@ -26,68 +26,108 @@
     ></script>
     <script src="./src/scripts/main.js"></script>
   </head>
-  <body>
-    <header class="sticky top-0 left-0 z-50 bg-secondary">
+  <body class="dark:bg-dark dark:text-white">
+    <header class="sticky top-0 left-0 z-50 bg-secondary dark:bg-dark">
       <nav class="flex justify-between items-center py-5 container">
-        <div class="-translate-x-10">
-          <img src="/images/logo.png" alt="Eureka" />
-        </div>
+        <a class="translate-y-1" href="/">
+          <img
+            src="/images/logo.png"
+            alt="Eureka"
+            class="eurekaLogo scale-150 translate-x-5 md:scale-100 md:translate-x-0"
+          />
+        </a>
 
         <div
-          class="relative hidden md:flex items-center gap-6 justify-between min-w-[75%]"
+          class="relative flex items-center min-w-[75%] justify-between gap-20"
           id="nav-bar"
         >
-          <ul class="flex gap-12 relative items-center">
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#about">About Us</a>
+          <!-- Nav Items -->
+          <ul
+            class="gap-3 relative items-center text-black dark:text-white hidden md:flex justify-between lg:gap-12"
+          >
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="/">Home</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#events">Event</a>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="#events">Event</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#program">Programs</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./contact.html">Contact Us</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./faq.html">FAQ</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./program.html">Blog</a>
             </li>
+            <li class="font-sans font-bold hover:text-primary active">
+              <a href="./faq.html">FAQ</a>
+            </li>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="./contact.html">Contact Us</a>
+            </li>
           </ul>
+
+          <!-- Toggle Switch formerly here-->
+
           <button
-            class="hidden md:block bg-primary p-3 px-6 rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
+            class="hidden md:block bg-primary p-3 lg:px-4 xl:px-6 max-w-28 xl:max-w-none rounded-[2rem] font-lato font-bold text-white cursor-pointer hover:opacity-90 scale-105"
           >
             <a href="register.html"> Become an Advocate </a>
           </button>
         </div>
 
+        <!-- Toggle Switch -->
+        <label
+          class="flex items-center cursor-pointer absolute right-[20%] md:right-[25%] xl:right-[30%]"
+        >
+          <div class="relative">
+            <input id="theme-toggle" type="checkbox" class="sr-only" />
+            <!-- Switch Background -->
+            <div
+              class="block bg-black w-[70px] h-9 rounded-full dark:bg-blue-200 transition-all duration-150"
+            ></div>
+            <!-- Switch Icon -->
+            <div
+              class="switchIcon absolute right-1 top-1 rounded-full transition-transform h-7 w-7"
+            >
+              <div id="lightIcon" class="relative">
+                <img src="/images/icons/Toggle.png" alt="" />
+                <img
+                  src="/images/icons/clouds.png"
+                  alt=""
+                  class="absolute scale-75 -right-2 top-1/2 -translate-y-1/2"
+                />
+              </div>
+              <div
+                id="darkIcon"
+                class="bg-white w-full h-full rounded-full hidden"
+              >
+                <div
+                  class="bg-dark w-full h-full rounded-full -translate-x-2"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </label>
+
         <!-- Mobile Nav Bar -->
         <div
-          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary md:hidden"
+          class="container absolute top-24 left-0 w-full py-10 hidden flex-col items-start justify-center gap-6 rounded-lg bg-secondary dark:bg-dark md:hidden"
           id="mobileNav"
         >
           <ul
-            class="flex flex-col gap-12 md:relative md:flex-row md:items-center"
+            class="flex flex-col gap-12 md:relative md:flex-row md:items-center text-black dark:text-white"
           >
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#about">About Us</a>
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="/">Home</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#events">Event</a>
+
+            <li class="font-sans font-bold hover:text-primary">
+              <a href="/#events">Event</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
-              <a href="./index.html#program">Programs</a>
-            </li>
-            <li class="font-sans font-semibold hover:text-primary">
+
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./contact.html">Contact Us</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary active">
               <a href="./faq.html">FAQ</a>
             </li>
-            <li class="font-sans font-semibold hover:text-primary">
+            <li class="font-sans font-bold hover:text-primary">
               <a href="./program.html">Blog</a>
             </li>
           </ul>
@@ -98,7 +138,7 @@
           </button>
         </div>
 
-        <div class="block md:hidden">
+        <div class="block md:hidden text-black dark:text-white">
           <span class="material-symbols-outlined" id="openMenu">
             &#xe5d2;
           </span>
@@ -107,8 +147,10 @@
     </header>
 
     <section id="faq" class="container py-10">
-      <h2 class="script-font mb-4">Engagement</h2>
-      <h1 class="text-3xl font-bold border-b-2 border-[#0279B9] pb-6 md:text-4xl">
+      <h2 class="script-font mb-4">FAQ</h2>
+      <h1
+        class="text-3xl font-bold border-b-2 border-[#0279B9] pb-6 md:text-4xl"
+      >
         Frequently Asked Questions
       </h1>
       <!-- <hr class="text-[#0279B9] h-1" /> -->
@@ -118,7 +160,7 @@
         <!-- Accordians -->
         <div class="accordion w-full md:max-w-xl flex flex-col gap-5">
           <div
-            class="accordion-item bg-white border-b-[#0279B9] border-b-2 p-3 rounded-none w-full"
+            class="accordion-item bg-white border-b-[#0279B9] border-b-2 p-3 rounded-none w-full dark:bg-dark"
           >
             <div
               id="accordion-header"
@@ -134,7 +176,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full"
+            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full dark:bg-dark"
           >
             <div
               id="accordion-header"
@@ -151,7 +193,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-b-[#0279B9] border-b-2 p-3 rounded-none w-full"
+            class="accordion-item bg-white border-b-[#0279B9] border-b-2 p-3 rounded-none w-full dark:bg-dark"
           >
             <div
               id="accordion-header"
@@ -169,7 +211,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full"
+            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full dark:bg-dark"
           >
             <div
               id="accordion-header"
@@ -185,7 +227,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full"
+            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full dark:bg-dark"
           >
             <div
               id="accordion-header"
@@ -203,7 +245,7 @@
             </div>
           </div>
           <div
-            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full"
+            class="accordion-item bg-white border-[#0279B9] border-b-2 p-3 rounded-none w-full dark:bg-dark"
           >
             <div
               id="accordion-header"
@@ -219,6 +261,7 @@
             </div>
           </div>
         </div>
+
         <!-- Form -->
         <div
           class="w-full md:w-1/2 md:max-w-sm flex flex-col gap-4 items-center"
@@ -231,12 +274,7 @@
             If you have any more questions, feel free to reach out to us by
             filling out the form below.
           </p>
-          <form
-            action=""
-            method="post"
-            class="w-full flex flex-col gap-5 items-center"
-            onsubmit="return popUp()"
-          >
+          <form id="faq" class="w-full flex flex-col gap-5 items-center">
             <div class="w-full flex flex-col gap-1">
               <label for="email" class="font-bold text-base"
                 >Email Address</label
@@ -247,7 +285,7 @@
                 name="email"
                 placeholder="Your email address"
                 ol
-                class="w-full p-4 rounded-full border-[#ddd] border-2 focus:outline-none"
+                class="w-full p-4 rounded-full border-[#ddd] border-2 focus:outline-none dark:bg-dark"
                 required
               />
             </div>
@@ -260,7 +298,7 @@
                 name="message"
                 rows="3"
                 placeholder="Type your message here"
-                class="w-full p-4 px-6 rounded-3xl border-[#ddd] border-2 focus:outline-none"
+                class="w-full p-4 px-6 rounded-3xl border-[#ddd] border-2 focus:outline-none dark:bg-dark"
                 required
               ></textarea>
             </div>
@@ -293,15 +331,17 @@
         </div>
         <!-- Popup  -->
         <div
-          class="submit_success container bg-white rounded-xl w-full h-fit max-w-[580px] items-center justify-center translate-y-5 py-12"
+          class="submit_success container bg-white rounded-xl w-full h-fit max-w-[580px] items-center justify-center translate-y-5 py-12 dark:bg-dark"
           id="submit_success"
         >
           <div
             class="flex-col flex items-center justify-center gap-10 h-full w-full"
           >
-            <img src="./images/EnvelopMail.gif" alt="success" />
+            <img src="./images/mail_sent.gif" alt="success" />
 
-            <div class="flex flex-col items-center w-full text-primary gap-3">
+            <div
+              class="flex flex-col items-center w-full text-primary gap-3 dark:text-white"
+            >
               <p class="font-semibold text-center text-xl">
                 Question Successfully sent!
               </p>
@@ -313,57 +353,5 @@
         </div>
       </div>
     </section>
-    <script>
-      const accordionHeaders = document.querySelectorAll("#accordion-header");
-
-      // accordionHeaders.style.display = "none";
-
-      accordionHeaders.forEach((header) => {
-        header.addEventListener("click", () => {
-          const content = header.nextElementSibling;
-
-          header.classList.toggle("active");
-
-          if (content.style.display === "block") {
-            content.style.display = "none";
-          } else {
-            content.style.display = "block";
-          }
-        });
-      });
-
-      // const popUp = () => {
-      //   const submitPopup = document.getElementById("submit_popup");
-      //   const submitLoader = document.getElementById("submit_loader");
-      //   const submitSuccess = document.getElementById("submit_success");
-
-      //   if (!submitPopup || !submitLoader || !submitSuccess) {
-      //     console.error("One or more elements not found.");
-      //     return false;
-      //   }
-
-      //   try {
-      //     // Show popup and loader
-      //     submitPopup.classList.add("show");
-      //     submitLoader.style.display = "block";
-
-      //     // Simulate a delay for loader before showing success
-      //     setTimeout(() => {
-      //       submitLoader.style.display = "none";
-      //       submitSuccess.style.display = "block";
-
-      //       // Redirect after 2 seconds
-      //       setTimeout(() => {
-      //         window.location.href = "index.html";
-      //       }, 2000);
-      //     }, 1000);
-
-      //     return false; // Prevent form submission
-      //   } catch (error) {
-      //     console.error("An error occurred:", error);
-      //     return false;
-      //   }
-      // };
-    </script>
   </body>
 </html>

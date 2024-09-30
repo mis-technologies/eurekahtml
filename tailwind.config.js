@@ -3,6 +3,7 @@ module.exports = {
     "./**/*.{html,js}",
     // "./src/**/*.{html,js}",
   ],
+  darkMode: "selector",
   theme: {
     extend: {
       colors: {
@@ -11,7 +12,8 @@ module.exports = {
         secondary: "#F4F4F4",
         accent: "#fcbf49",
         lightPurple: "#a60874",
-        lightGreen: "#7bffb3"
+        lightGreen: "#7bffb3",
+        dark: "#121212",
       },
       fontFamily: {
         main: ["ui-sans-serif", "system-ui"],
@@ -32,13 +34,13 @@ module.exports = {
         center: true,
       },
       screens: {
-        'sm': '640px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
-        '2xl': '1536px',
-      }
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
     },
   },
   plugins: [],
-}
+};
