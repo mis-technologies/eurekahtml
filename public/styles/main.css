@@ -81,6 +81,11 @@ html,
   transition: transform var(--transition-duration) var(--transition-timing);
 }
 
+.custom-textarea {
+  overflow: hidden;
+  resize: none;
+}
+
 body {
   width: 100%;
   max-width: 1440px;

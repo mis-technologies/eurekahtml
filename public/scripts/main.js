@@ -107,6 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
       submitPopup.classList.add("show");
       submitLoader.style.display = "block";
 
+      // Reset all forms
+      const forms = document.querySelectorAll("form");
+      forms.forEach((form) => form.reset());
+
       setTimeout(() => {
         submitLoader.style.display = "none";
         submitSuccess.style.display = "block";
@@ -150,9 +154,22 @@ document.addEventListener("DOMContentLoaded", () => {
       return allFilled;
     };
 
+    const checkFormSelect = (form) => {
+      const selects = form.querySelectorAll("select[required]");
+      let allFilled = true;
+
+      selects.forEach((select) => {
+        if (select.value === "") {
+          allFilled = false;
+        }
+      });
+
+      return allFilled;
+    };
+
     // Function to change button state if the form validates
     const toggleButtonState = (form, button) => {
-      if (checkFormInputs(form)) {
+      if (checkFormInputs(form) && checkFormSelect(form)) {
         button.disabled = false;
       } else {
         button.disabled = true;
@@ -161,18 +178,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (firstForm && secondForm && imageContainer && formContainer) {
       // Add input event listeners to first form
-      firstForm.querySelectorAll("input[required]").forEach((input) => {
-        input.addEventListener("input", () =>
-          toggleButtonState(firstForm, continueButton)
-        );
-      });
+      firstForm
+        .querySelectorAll("input[required], select[required]")
+        .forEach((element) => {
+          element.addEventListener("change", () =>
+            toggleButtonState(firstForm, continueButton)
+          );
+          element.addEventListener("input", () =>
+            toggleButtonState(firstForm, continueButton)
+          );
+        });
 
       // Add input event listeners to second form
-      secondForm.querySelectorAll("input[required]").forEach((input) => {
-        input.addEventListener("input", () =>
-          toggleButtonState(secondForm, applyButton)
-        );
-      });
+      secondForm
+        .querySelectorAll("input[required], select[required]")
+        .forEach((element) => {
+          element.addEventListener("change", () =>
+            toggleButtonState(secondForm, applyButton)
+          );
+          element.addEventListener("input", () =>
+            toggleButtonState(secondForm, applyButton)
+          );
+        });
 
       // Transition to second form on clicking continueButton
       const transitioned = () => {
@@ -204,6 +231,36 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!applyButton.disabled) {
           popUp();
         }
+      });
+    }
+
+    // Function to handle dots
+    if (dot1 && dot2) {
+      dot1.addEventListener("click", () => {
+        if (secondForm.classList.contains("hidden")) return;
+
+        firstForm.classList.remove("hidden");
+        secondForm.classList.add("hidden");
+        dot1.classList.add("active");
+        dot2.classList.remove("active");
+      });
+
+      dot2.addEventListener("click", () => {
+        if (!checkFormInputs(firstForm)) return;
+
+        firstForm.classList.add("hidden");
+        secondForm.classList.remove("hidden");
+        secondForm.classList.add("fade-in");
+        dot1.classList.remove("active");
+        dot2.classList.add("active");
+
+        secondForm.addEventListener(
+          "animationend",
+          () => {
+            secondForm.classList.remove("fade-in");
+          },
+          { once: true }
+        );
       });
     }
   }
@@ -440,6 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Initialize the 3D movement
   function initializeBgParticleMovement() {
     const particles = document.querySelectorAll(".particle");
     const container = document.querySelector(".particle-container");
@@ -484,6 +542,21 @@ document.addEventListener("DOMContentLoaded", () => {
     animate();
   }
 
+  // Function to initialize auto-resize for textareas
+  function initializeAutoResize() {
+    function autoResize(textarea) {
+      textarea.style.height = "auto"; // Reset height to auto to calculate new height correctly
+      textarea.style.height = `${textarea.scrollHeight}px`; // Set height based on scrollHeight
+    }
+
+    const textareas = document.querySelectorAll(".custom-textarea");
+    textareas.forEach((textarea) => {
+      textarea.addEventListener("input", () => autoResize(textarea));
+      // Initialize the textarea height on page load
+      autoResize(textarea);
+    });
+  }
+
   // Initialize functions
   initializeNavBar();
   initializeRegistrationPage();
@@ -497,4 +570,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeScrollToTop();
   initializeDarkMode();
   initializeBgParticleMovement();
+  initializeAutoResize();
 });
