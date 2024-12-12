@@ -26,7 +26,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body class="dark:bg-dark dark:text-white transition-all duration-1000">
     <header class="sticky top-0 left-0 z-50 bg-secondary dark:bg-dark">
       <nav class="flex justify-between items-center py-5 container">
         <a class="translate-y-1" href="/">
@@ -70,15 +70,42 @@
           <div class="relative">
               <input id="theme-toggle" type="checkbox" class="sr-only" />
               <!-- Switch Background -->
-              <div class="block bg-black w-[70px] h-9 rounded-full dark:bg-blue-200 transition-all duration-150"></div>
-              <!-- Switch Icon -->
-              <div class="switchIcon absolute right-1 top-1 rounded-full transition-transform h-7 w-7">
-                <div id="lightIcon" class="relative">
-                  <img src="/images/icons/Toggle.png" alt="">
-                  <img src="/images/icons/clouds.png" alt="" class="absolute scale-75 -right-2 top-1/2 -translate-y-1/2">
+              <div class="block bg-black w-[70px] h-9 rounded-full dark:bg-blue-200 transition-all duration-700"></div>
+              <div class="block bg-black w-[70px] h-9 rounded-full dark:hidden absolute top-0 left-0">
+                <div class="w-full h-full rounded-full relative">
+                  <div class="bg-white absolute top-4 left-0 w-[3px] h-[3px] rounded-full"></div>
+                  <div class="bg-white absolute top-1/3 left-4 w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute bottom-1/3 left-4 w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute top-[12%] left-[30%] w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute top-[78%] left-[35%] w-[2px] h-[2px] rounded-full"></div>
+                  <div class="bg-white absolute top-[34%] left-[42%] w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute top-[5%] left-[40%] w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute top-[83%] left-[25%] w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute top-[29%] left-[20%] w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute top-[8%] left-[23%] w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute top-[76%] left-[37%] w-[2px] h-[2px] rounded-full"></div>
+                  <div class="bg-white absolute bottom-[80%] right-[45%] w-[1.5px] h-[1.5px] rounded-full"></div>
+                  <div class="bg-white absolute top-[80%] right-[45%] w-[1.5px] h-[1.5px] rounded-full"></div>
+                  <div class="bg-white absolute top-[20%] left-[40%] w-[2px] h-[2px] rounded-full"></div>
+                  <div class="bg-white absolute bottom-[80%] right-[45%] w-[1.5px] h-[1.5px] rounded-full"></div>
+                  <div class="bg-white absolute bottom-[30%] left-[35%] w-[1px] h-[1px] rounded-full"></div>
+                  <div class="bg-white absolute top-[80%] right-[45%] w-[1.5px] h-[1.5px] rounded-full"></div>
+  </div>
                 </div>
-                <div id="darkIcon" class="bg-white w-full h-full rounded-full hidden">
-                  <div class="bg-dark w-full h-full rounded-full -translate-x-2">
+              </div>
+              <!-- Switch Icon -->
+              <div class="switchIcon absolute right-1 top-1 rounded-full transition-all ease-in-out h-7 w-7">
+                <div id="lightIcon" class="relative">
+                  <img src="/images/icons/Toggle.png" alt=" ">
+                  <img src="/images/icons/clouds.png" alt="" class="absolute scale-75 -right-2 top-1/2 -translate-y-1/2 cloud-in" id="cloud">
+                </div>
+                <div id="darkIcon" class="bg-white w-full h-full rounded-full hidden transition-all duration-500">
+                  <div class="bg-dark w-full h-full rounded-full -translate-x-2 relative">
+                    <div class="bg-white absolute top-[29%] left-[20%] w-[1.5px] h-[1.5px] rounded-full"></div>
+                    <div class="bg-white absolute top-[8%] left-[23%] w-[1.5px] h-[1.5px] rounded-full"></div>
+                    <div class="bg-white absolute top-[76%] left-[37%] w-[2px] h-[2px] rounded-full"></div>
+                    <div class="bg-white absolute bottom-[80%] right-[45%] w-[1.5px] h-[1.5px] rounded-full"></div>
+                    <div class="bg-white absolute top-[80%] right-[45%] w-[1.5px] h-[1.5px] rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -280,37 +307,36 @@
         <img src="./images/designs/Vector.png" alt="" />
       </div>
 
-      <!-- POPUP animation -->
-    <div class="submit_popup" id="submit_popup">
+     <!-- POPUP animation -->
+     <div class="submit_popup" id="submit_popup">
       <!-- Loader -->
-      <div
-        class="submit_loader flex justify-center items-center"
-        id="submit_loader"
-      >
+      <div class="submit_loader flex justify-center items-center" id="submit_loader">
         <div class="flex items-center justify-center h-full w-full">
           <img src="./images/loader.gif" class="object-cover" alt="preloader" />
         </div>
       </div>
       <!-- Popup  -->
-      <div
-        class="submit_success container bg-white rounded-xl w-full h-fit max-w-[580px] items-center justify-center translate-y-5 py-12 dark:bg-dark  dark:text-white"
-        id="submit_success"
-      >
-        <div
-          class="flex-col flex items-center justify-center gap-10 h-full w-full"
-        >
-          <img src="./images/mail_sent.gif" alt="success" />
-
-          <div class="flex flex-col items-center w-full gap-3 text-primary dark:text-white">
+      <div class="submit_success container bg-white rounded-xl w-full h-fit max-w-[580px] items-center justify-center translate-y-5 py-12 dark:bg-dark relative" id="submit_success">
+        <button 
+          class="absolute top-0 right-0 text-black dark:text-white font-bold text-3xl p-5 rounded-full  flex items-center justify-center cursor-pointer hover:opacity-90" 
+          id="close_popup"
+        >&times;
+      </button>
+        <div class="flex-col flex items-center justify-center gap-10 h-full w-full">
+          <img src="./images/mail_sent.gif" alt="" />
+          <div class="flex flex-col items-center w-full text-primary gap-3 dark:text-white">
             <p class="font-semibold text-center text-xl">
               Message Successfully sent!
             </p>
             <p class="font-semibold text-center text-lg">
               We get back to you via email, thank you.
             </p>
+            <button class="mt-4 bg-primary text-white px-4 py-2 rounded-md" id="redirect_home">Go to Home</button>
           </div>
         </div>
       </div>
     </div>
+
+    
   </body>
 </html>
