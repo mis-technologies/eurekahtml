@@ -557,6 +557,89 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Auto play slider
+  function initializeAutoPlaySlider() {
+    const track = document.querySelector(".slider-track");
+    const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+  
+    const slideWidth = slides[0].offsetWidth;
+    let currentIndex = 0;
+    let autoplayInterval;
+  
+    // Clone first and last slides for seamless looping
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+  
+    // Add clones to the track
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+  
+    const totalSlides = slides.length + 2; // Include clones
+  
+    // Adjust the initial position to account for the lastClone
+    track.style.transform = `translateX(-${slideWidth}px)`;
+  
+    function moveToSlide(index, animate = true) {
+      if (animate) {
+        track.style.transition = "transform 0.3s ease-in-out";
+      } else {
+        track.style.transition = "none";
+      }
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+      currentIndex = index;
+    }
+  
+    function goToNextSlide() {
+      moveToSlide(currentIndex + 1);
+  
+      if (currentIndex + 1 === totalSlides - 1) {
+        setTimeout(() => {
+          moveToSlide(1, false); // Jump to first real slide without animation
+        }, 300); // Match the transition duration
+      }
+    }
+  
+    function goToPrevSlide() {
+      moveToSlide(currentIndex - 1);
+  
+      if (currentIndex - 1 === 0) {
+        setTimeout(() => {
+          moveToSlide(totalSlides - 2, false); // Jump to last real slide without animation
+        }, 300); // Match the transition duration
+      }
+    }
+  
+    function startAutoplay() {
+      autoplayInterval = setInterval(goToNextSlide, 3000);
+    }
+  
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+  
+    prevBtn.addEventListener("click", () => {
+      stopAutoplay();
+      goToPrevSlide();
+      startAutoplay();
+    });
+  
+    nextBtn.addEventListener("click", () => {
+      stopAutoplay();
+      goToNextSlide();
+      startAutoplay();
+    });
+  
+    window.addEventListener("resize", () => {
+      moveToSlide(currentIndex, false);
+    });
+  
+    // Start autoplay
+    startAutoplay();
+  }
+  
+
   // Initialize functions
   initializeNavBar();
   initializeRegistrationPage();
@@ -571,4 +654,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeDarkMode();
   initializeBgParticleMovement();
   initializeAutoResize();
+  initializeAutoPlaySlider();
 });

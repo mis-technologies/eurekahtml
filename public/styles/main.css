@@ -151,6 +151,40 @@ body {
   z-index: -1;
 }
 
+.slider-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 16px;
+  transform: translateX(0);
+}
+
+.slide {
+  min-width: calc(100% / 1); 
+  box-sizing: border-box;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.slider-container:hover .prev,
+.slider-container:hover .next {
+    visibility: visible;
+}
+
+
 /* Blog active class */
 #header ul li.active {
   border-bottom: 2px solid var(--primary);
@@ -375,6 +409,7 @@ body {
   animation: slide1 1.5s infinite;
 }
 
+
 @media (max-width: 768px) {
   #cardContainer {
     height: fit-content;
@@ -391,6 +426,18 @@ body {
   .collapsed {
     height: fit-content;
   }
+  .slide {
+    min-width: calc(100% / 3); 
+    box-sizing: border-box;
+  }
+
+  #signUpPage {
+    background-image: url("../images/team.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
 }
 
 @media (min-width: 1024px) {
@@ -407,6 +454,13 @@ body {
 
   .collapsed {
     height: 250px;
+  }
+  .slide {
+    min-width: calc(100% / 3); 
+    box-sizing: border-box;
+  }
+  #signUpPage {
+    background-image: none;
   }
 }
 
@@ -425,6 +479,13 @@ body {
 
   .collapsed {
     height: 230px;
+  }
+  .slide {
+    min-width: calc(100% / 4); 
+    box-sizing: border-box;
+  }
+  #signUpPage {
+    background: none;
   }
 }
 
